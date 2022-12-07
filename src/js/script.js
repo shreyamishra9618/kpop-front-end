@@ -10,11 +10,12 @@ var requestUrl = `http://api.music-story.com/en/genre/search?oauth_signature=r7G
         .then(response => {
            return response.json();
          })
-function getCard(data){//gets the data and assigns certain parts to certain divs
+function getApi(data){//gets the data and assigns certain parts to certain divs
     document.getElementById('image').firstElementChild.src = `${data.image.url}`;
-    document.getElementById('name').innerHTML = `${data.name}`;
+    document.getElementById('group').innerHTML = `${data.group}`;
     document.getElementById('bio').innerHTML = displayparagraph(data.biography);
+    document.getElementById('songs').innerHTML = displayparagraph(data.songs);
     
-    const search=`${data.name}`; //pulls the name and saves it into search
+    const search=`${data.group}`; //pulls the name and saves it into search
     main(search);//calls the next function
 }
