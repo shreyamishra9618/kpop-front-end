@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-// const userRoutes = require("./userController")
-// const todoRoutes = require("./todoController")
+const userRoutes = require("./userController")
+// const Routes = require("./Controller")
 const kpop =require("kpop")
 
 router.get("/",(req,res)=>{
@@ -22,8 +22,8 @@ router.get("/readtoken",(req,res)=>{
     const token =req.headers.authorization.split(" ")[1];
     try{
 
-        // const tokenData = jwt.verify(token,process.env.JWT_SECRET)
-        // console.log(tokenData)
+        const tokenData = jwt.verify(token,process.env.SUPER_SECRET)
+        console.log(tokenData)
     } catch(err){
         console.log("error")
         console.log(err);
