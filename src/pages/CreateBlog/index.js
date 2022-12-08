@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import CloudinaryUploadWidget_blog from '../../components/CloudinaryUploadWidget_blog';
+import CloudinaryUploadWidgetBlog from '../../components/CloudinaryUploadWidgetBlog';
 
 
 export default function CreateBlog() {
@@ -40,18 +40,13 @@ export default function CreateBlog() {
                     <input type="text" name="keyword" id="keyword" className="txtInput" placeholder='Enter a kpop star' value={keyword} onChange={e=>setKeyword(e.target.value)} />
                     <span>(Group name, artist name)</span>
                 </section>
-                {/* <section className='inputline type'>
-                    <label>Post Type:</label>
-                    <Link to="/createpost">Trivia Quiz</Link>
-                    <span className={`typeBtn ${postType==='trivia'?'on':''}`} id="btnTrivia" onClick={()=>setPostType('trivia')}>Trivia Quiz</span>
-                    <span className={`typeBtn ${postType==='blog'?'on':''}`} id="btnBlog" onClick={()=>setPostType('blog')}>Simple Blog</span> 
-                </section> */}
+
 
                 <div className='blog-input-box'>
                     <section className='inputline qImg'>
                         <label>Blog Image: </label>
-                        <CloudinaryUploadWidget_blog  />
-                        <img id='picture-preview' src="./images/Placeholder-Graphic-Icon.jpg"/>
+                        <CloudinaryUploadWidgetBlog  />
+                        <img id='picture-preview' src="./images/Placeholder-Graphic-Icon.jpg" alt="placeholder"/>
                     </section>
                     <section className='inputline'>
                         <label>Blog Content</label>
