@@ -7,11 +7,12 @@ import Footer from "./components/Footer/";
 
 function App() {
   return (
-    <div >
-      <Router basename="/">
+    <div className="container">
+      <Router>
           <Header />
           <Routes>
             <Route path="/" element={<Homepage />} /> 
+            <Route path="/:id" element={<Homepage />} />
             <Route path="/Login" element={<Login />}/>
           </Routes>
           <Footer /> 
