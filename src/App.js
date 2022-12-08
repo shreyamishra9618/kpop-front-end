@@ -6,15 +6,19 @@ import Footer from "./components/Footer/";
 import TriviaQuiz from "./pages/TriviaQuiz";
 import CreatePost from "./pages/CreatePost";
 import CreateBlog from "./pages/CreateBlog";
+import Wikipage from "./pages/WikiPage";
 
 
 function App() {
   return (
-    <div >
-      <Router basename="/">
+    <div className="container">
+      <Router>
           <Header />
           <Routes>
             <Route path="/" element={<Homepage />} /> 
+            <Route path="/:id" element={<Homepage />} />
+            <Route path="/wiki" element={<Wikipage />} /> 
+            <Route path="/wiki/:id" element={<Wikipage />} />
             <Route path="/Login" element={<Login />}/>
             <Route path="/triviaquiz" element={<TriviaQuiz />}/>
             <Route path="/createpost" element={<CreatePost />}/>
