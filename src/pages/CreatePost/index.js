@@ -6,10 +6,7 @@ import "./style.css"
 
 export default function CreatePost() {
 
-    const [postType, setPostType] = useState('trivia');
     const [keyword, setKeyword] = useState('')
-    const [blogText, setBlogText] = useState('')
-
     const [triviaTitle, setTriviaTitle] = useState('')
     const [errMsg, setErrMsg] = useState('')
     const [questionSet, setQuestionSet] = useState([
@@ -65,24 +62,6 @@ export default function CreatePost() {
         }
 
     ])
-
-
-    // blog content submit
-    const handleBlogFormSubmit = e => {
-        e.preventDefault();
-        console.log('handleblorgsubmit')
-
-        // check required inputs
-        if (!keyword) {
-            setErrMsg('Please type in a k-pop star title');
-            return;
-        }
-        if (!blogText) {
-            setErrMsg('Please enter blog content');
-            return;
-        }
-        setErrMsg('');    
-    }
 
     const handleQuizFormSubmit = e => {
         e.preventDefault();
@@ -153,26 +132,7 @@ export default function CreatePost() {
                     <input type="text" name="keyword" id="keyword" className="txtInput" placeholder='Enter a kpop star' value={keyword} onChange={e=>setKeyword(e.target.value)} />
                     <span>(Group name, artist name)</span>
                 </section>
-                {/* <section className='inputline type'>
-                    <label>Post Type:</label>
-                    <span className={`typeBtn ${postType==='trivia'?'on':''}`} id="btnTrivia" onClick={()=>setPostType('trivia')}>Trivia Quiz</span>
-                    <span className={`typeBtn ${postType==='blog'?'on':''}`} id="btnBlog" onClick={()=>setPostType('blog')}>Simple Blog</span>
-                </section> */}
 
-                {postType==='blog'?(
-                <div className='blog-input-box'>
-                    <section className='inputline qImg'>
-                        <label>Blog Image: </label>
-                        
-                        <img id='picture-preview0' src="./images/Placeholder-Graphic-Icon.jpg"/>
-                    </section>
-                    <section className='inputline'>
-                        <label>Blog Content</label>
-                        <textarea name="blogtext" value={blogText}  className="txtInput" onChange={e=>setBlogText(e.target.value)} ></textarea> 
-                    </section>
-                    <button type="sumbmit" onClick={handleBlogFormSubmit}>Submit!</button>
-                </div>
-                ):(  
                 <div className="trivia-input-box">  
                     <section className='inputline title'>
                         <label>Trivia Quiz Title:</label>
@@ -200,7 +160,7 @@ export default function CreatePost() {
                     </div>
                     
                 </div>
-                )}
+
             </form>
             <CloudinaryUploadWidget />
             </div>

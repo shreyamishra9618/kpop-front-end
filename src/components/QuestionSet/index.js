@@ -1,5 +1,4 @@
 import React from 'react';
-import CloudinaryUploadWidget from "../CloudinaryUploadWidget";
 
 export default function QuestionSet({index, item, handleQuestionSetChange, removeQuestion}) {
   return (
@@ -8,7 +7,7 @@ export default function QuestionSet({index, item, handleQuestionSetChange, remov
         <section className='inputline qImg'>
             <label>Image:</label> 
             <span id={`upload_widget${index}`} className="cloudinary-button">Upload an image</span>
-            <img id={`picture-preview${index}`} src="./images/Placeholder-Graphic-Icon.jpg"/>
+            <img id={`picture-preview${index}`} src="./images/Placeholder-Graphic-Icon.jpg" alt="placeholder"/>
         </section>
         <section className='inputline qQ'>
             <label>Q:</label>
