@@ -51,4 +51,3 @@ export default function Card({ id, username, title, numberofLike, category, them
       </li>
     );
   }
-
