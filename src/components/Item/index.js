@@ -1,3 +1,4 @@
+
 import React from "react";
 import { motion } from "framer-motion";
 import { LoremIpsum } from "react-lorem-ipsum";
@@ -17,7 +18,7 @@ export default function Item({ id }) {
         style={{ pointerEvents: "auto" }}
         className="overlay"
       >
-        <Link to="/" />
+        <Link to="/wiki" />
       </motion.div>
       <div className="card-content-container open">
         <motion.div className="card-content" layoutId={`card-container-${id}`}>
@@ -34,10 +35,11 @@ export default function Item({ id }) {
             <span className="category">{category}</span>
             <h2>{title}</h2>
             <h4>created by {username}</h4>
+            <botton>take quiz</botton>
           </motion.div>
           <motion.div className="content-container" animate>
             <LoremIpsum
-              p={6}
+              p={2}
               avgWordsPerSentence={6}
               avgSentencesPerParagraph={4}
             />
