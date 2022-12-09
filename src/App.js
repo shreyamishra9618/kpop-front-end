@@ -72,12 +72,12 @@ function App() {
   return (
     <div className="container">
       <Router>
-        <Header />
+        <Header isLoggedIn={isLoggedIn} handleLogout={handleLogout}/>
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/wiki" element={<Wikipage />} />
           <Route path="/wiki/:id" element={<Wikipage />} />
-          {/* <Route path="/dashboard" element={<Dashboard />} /> */}
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/login" element={<Login
             isLoggedIn={isLoggedIn}
             handleLoginSubmit={handleLoginSubmit}

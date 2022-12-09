@@ -5,7 +5,7 @@ export default function Login(props) {
     const navigate = useNavigate();
     useEffect(()=>{
         if(props.isLoggedIn){
-            navigate("/wiki")
+            navigate("/dashboard")
         }
        
       
