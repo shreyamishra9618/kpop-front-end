@@ -1,12 +1,13 @@
-
 import React from "react";
 import { motion } from "framer-motion";
-import { LoremIpsum } from "react-lorem-ipsum";
 import { Link } from "react-router-dom";
 import { items } from "../../data";
+import "../Item/style.css"
 
 export default function Item({ id }) {
-  const { category, title, username} = items.find(item => item.id === id);
+  {/* Silvia - need data - any info from API, for example: debute date, menbers, brief intro.... */}
+
+  const { title} = items.find(item => item.id === id);
 
   return (
     <>
@@ -32,17 +33,15 @@ export default function Item({ id }) {
             className="title-container"
             layoutId={`title-container-${id}`}
           >
-            <span className="category">{category}</span>
+          {/* Silvia - need data - group name */}
             <h2>{title}</h2>
-            <h4>created by {username}</h4>
-            <botton>take quiz</botton>
           </motion.div>
           <motion.div className="content-container" animate>
-            <LoremIpsum
-              p={2}
-              avgWordsPerSentence={6}
-              avgSentencesPerParagraph={4}
-            />
+            {/* Silvia - need data - any info from API, for example: debute date,popular songs, members, brief intro.... */}
+            {/* <p>{intro}</p>
+            <p>{members}</p> */}
+            <p>Sample info - BlackPINK IN YOUR AREA! </p>
+            <p>blackpink has 4 members</p>
           </motion.div>
         </motion.div>
       </div>
