@@ -15,6 +15,15 @@ function Navbar() {
         <lo className="nav-item" >
           <Link to="/wiki"> Kpop Wiki</Link>
         </lo>
+        <lo className="nav-item" >
+          <Link to="/createpost">Create a quiz</Link>
+        </lo>
+        <lo className="nav-item" >
+          <Link to="/createblog">Create a blog</Link>
+        </lo>
+        <lo className="nav-item" >
+          <Link to="/triviaquiz">Quiz</Link>
+        </lo>
         <lo className="nav-item">
           <Link to="/login">Login</Link>
         </lo>

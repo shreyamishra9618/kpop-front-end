@@ -1,0 +1,36 @@
+.trivia-quiz{padding:20px 0;text-align:center;}
+.trivia-quiz .quiz-container{    width:90%;
+    margin:0 auto;
+    max-width: 960px;
+    background:#fff;
+    padding:20px;
+
+    border:5px solid #000;
+    border-radius: 20px;
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.8)
+}
+.trivia-quiz .quiz-header{display:flex;justify-content: space-between;}
+
+.trivia-quiz .quiz-header h2{font-size:2em;margin-bottom:10px;}
+.trivia-quiz .details{display:flex;flex-direction: column;text-align: right;}
+.trivia-quiz .details .user{display:flex;border:2px solid #ccc;border-radius: 5px;border-top-left-radius:25px;border-bottom-left-radius:25px;align-items: center;margin-bottom:5px;}
+
+.trivia-quiz .details .user img{width:45px;height:45px;border-radius: 50px;object-fit: cover;}
+.trivia-quiz .details .user strong{padding:0 5px;}
+.trivia-quiz .details .diff{font-size:0.85em;margin-bottom:5px;}
+.trivia-quiz .details .rating{font-size:0.85em;}
+.trivia-quiz .question-img{width:70%;aspect-ratio:calc(16/9);overflow: hidden;border-radius: 15px;margin:0 auto 10px;}
+/* .trivia-quiz .question-img img{width:60%;height:300px;} */
+.trivia-quiz .question-img img{width:100%;height:100%;object-fit: cover;object-position: center;}
+.trivia-quiz .question-text{font-size:1.5em;margin-bottom:10px;}
+.trivia-quiz .answer-section{display:flex;flex-wrap: wrap;width:80%;margin:0 auto;justify-content: space-between;}
+/* .trivia-quiz .answer-section button{width:48%;font-size:1.2em;padding:5px 5px;margin-bottom:5px;} */
+.trivia-quiz .answer-section button{width:48%;font-size:1.2em;padding:8px 5px;margin-bottom:8px;border-radius: 5px;background-color:#ccc;border:none;cursor:pointer;text-align: center;}
+.trivia-quiz .answer-section button:hover{background-color: pink;}
+.trivia-quiz .answer-section button.right{background-color: green;}
+.trivia-quiz .answer-section button.wrong{background-color: red;}
+
+.trivia-quiz .score-image{display:flex;}
+.trivia-quiz .score-image img{width:25%;height:200px;object-fit: cover;}
+.trivia-quiz .score-section{background-color:#ccc;padding:20px;border-radius: 10px;}
+.trivia-quiz .score{padding:30px 0;font-size: 1.5em;}

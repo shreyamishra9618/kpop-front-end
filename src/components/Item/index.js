@@ -19,6 +19,7 @@ export default function Item({ id }) {
         style={{ pointerEvents: "auto" }}
         className="overlay"
       >
+        --! api place--!
         <Link to="/wiki" />
       </motion.div>
       <div className="card-content-container open">

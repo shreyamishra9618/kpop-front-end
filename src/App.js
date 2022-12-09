@@ -3,6 +3,9 @@ import Login from "./pages/Login";
 import Homepage from "./pages/Homepage";
 import Header from "./components/Header/";
 import Footer from "./components/Footer/";
+import TriviaQuiz from "./pages/TriviaQuiz";
+import CreatePost from "./pages/CreatePost";
+import CreateBlog from "./pages/CreateBlog";
 import Wikipage from "./pages/WikiPage";
 
 
@@ -16,6 +19,9 @@ function App() {
             <Route path="/wiki" element={<Wikipage />} /> 
             <Route path="/wiki/:id" element={<Wikipage />} />
             <Route path="/Login" element={<Login />}/>
+            <Route path="/triviaquiz" element={<TriviaQuiz />}/>
+            <Route path="/createpost" element={<CreatePost />}/>
+            <Route path="/createblog" element={<CreateBlog />}/>
           </Routes>
           <Footer /> 
         </Router>
