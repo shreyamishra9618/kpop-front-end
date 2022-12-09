@@ -1,6 +1,4 @@
 
-
-
 import React from 'react'
 import '../Card/style.css';
 import { motion } from "framer-motion";
