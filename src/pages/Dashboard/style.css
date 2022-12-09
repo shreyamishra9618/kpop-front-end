@@ -1,0 +1,30 @@
+.dashboard{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.mainpage{
+    width:95%;
+    padding: 1%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+}
+
+.dash-options{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+}
+
+button{
+    margin:10px;
+}
+.quiz-card{
+    width:100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}

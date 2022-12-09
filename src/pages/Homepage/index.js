@@ -3,6 +3,7 @@ import '../Homepage/style.css';
 import QuizCard from '../../components/QuizCard';
 import {items} from "../../data"
 
+// Silvia -need to fetch data (instead of use items)
 export default function Homepage() {
 
   return (

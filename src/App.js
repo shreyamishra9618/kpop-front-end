@@ -7,6 +7,7 @@ import TriviaQuiz from "./pages/TriviaQuiz";
 import CreatePost from "./pages/CreatePost";
 import CreateBlog from "./pages/CreateBlog";
 import Wikipage from "./pages/WikiPage";
+import Dashboard from "./pages/Dashboard";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <Route path="/triviaquiz" element={<TriviaQuiz />}/>
             <Route path="/createpost" element={<CreatePost />}/>
             <Route path="/createblog" element={<CreateBlog />}/>
+            <Route path="/dashboard" element={<Dashboard />}/>
           </Routes>
           <Footer /> 
         </Router>
