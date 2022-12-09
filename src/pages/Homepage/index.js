@@ -1,31 +1,24 @@
 import React from 'react'
-import "./style.css"
-import { AnimatePresence } from "framer-motion";
+import '../Homepage/style.css';
+import QuizCard from '../../components/QuizCard';
+import {items} from "../../data"
 
-import  List  from "../../components/List";
-import  Item  from "../../components/Item";
-
-import { useParams } from "react-router-dom"
-
-
+// Silvia -need to fetch data (instead of use items)
 export default function Homepage() {
-  let { id } = useParams();
-  console.log("id is " + id);
-  const imageHasLoaded = true;
 
   return (
-    <>
     <div className='homepage'>
     <div className='mainpage'>
-      <List selectedId={id} />
-      <AnimatePresence>
-        {id && imageHasLoaded && <Item id={id} key="item" />}
-      </AnimatePresence>
-      </div>
+      <li className='quiz-card'>
+        {items.map(item => (
+          <QuizCard key={item.id} info={item} />
+        ))}
+        </li>
+        </div>
       <div className='userRanking'>
-        <h3>top ranking users</h3>
+        <h4>Top Score Users</h4>
       </div>
       </div>
-    </>
   );
 }
+

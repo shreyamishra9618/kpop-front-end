@@ -1,0 +1,10 @@
+.quiz-container{
+    width:30%;
+    background-color:lightpink;
+    margin:3px;
+    border-radius: 10px;
+}
+
+img{
+    width:100%;
+}
