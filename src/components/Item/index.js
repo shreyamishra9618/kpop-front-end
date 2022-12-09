@@ -4,9 +4,6 @@ import { Link } from "react-router-dom";
 import { items } from "../../data";
 import "../Item/style.css"
 
-
-
-
 export default function Item({ id }) {
   
 

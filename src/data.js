@@ -68,8 +68,9 @@ export const items = [
       DateGroupFormed:"2010",
       Country:"Seoul, South Korea",
       FandomName:"ARMY",
-      Instagram:"bts.bighitofficial",
-      Top3Songs:["My Universe","Dynamite","I Need U."]
+      Instagram:"Instagram bts.bighitofficial",
+      Top3Songs:["My Universe","Dynamite","I Need U."],
+      Picture:"https://i.scdn.co/image/ab6761610000e5eb5704a64f34fe29ff73ab56bb"
       },
       {
       id:"3",
@@ -79,8 +80,9 @@ export const items = [
       DateGroupFormed:2015,
       Country:"South Korea",
       FandomName:"Once",
-      Instagram:"twicetagram",
-      Top3Songs:["Feel Special","Fancy","Cheer Up"]
+      Instagram:"Instagram twicetagram",
+      Top3Songs:["Feel Special","Fancy","Cheer Up"],
+      Picture:"https://people.com/thmb/vKeU9x0JeCmBGBGQZ2dfXCE7_dU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(749x0:751x2)/twice86-5e1a7532b1244f10acfd8f1921e2fc08.jpg"
       },
       {
       id:"4",
@@ -90,8 +92,9 @@ export const items = [
       DateGroupFormed:2015,
       Country:"Seoul,South Korea",
       FandomName:"IKONIC",
-      Instagram:"withikonic",
-      Top3Songs:["Airplane","My Type","Apology"]
+      Instagram:"Instagram withikonic",
+      Top3Songs:["Airplane","My Type","Apology"],
+      Picture:"https://www.billboard.com/wp-content/uploads/media/iKON-2018-cr-YG-Entertainment-billboard-1548.jpg"
       },
       {
       id:"5",
@@ -101,8 +104,9 @@ export const items = [
       DateGroupFormed:2014,
       Country:"Seoul,SouthKorea",
       FandomName:"ReVeluv",
-      Instagram:"redvelvet.smtown",
-      Top3Songs:["Psycho","FeelMyRhythm","BadBoy"]
+      Instagram:"Instagram redvelvet.smtown",
+      Top3Songs:["Psycho","FeelMyRhythm","BadBoy"],
+      Picture:"https://www.allkpop.com/upload/2022/03/content/230242/1648017741-20220323-redvelvet.jpg"
       }, 
       {
       id:"6",
@@ -112,8 +116,9 @@ export const items = [
       DateGroupFormed:2006,
       Country:"Seoul,SouthKorea",
       FandomName:"V.I.P",
-      Instagram:"bigbang_official",
-      Top3Songs:["FXXKIT","HaruHaru","Loser"]
+      Instagram:"Instagram bigbang_official",
+      Top3Songs:["FXXKIT","HaruHaru","Loser"],
+      Picture:"https://www.allkpop.com/upload/2021/08/content/190018/1629346688-20200609-bigbang.jpg"
       }
   ];
   
