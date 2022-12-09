@@ -1,62 +1,69 @@
 [
 {
-    "Group Name": "BlackPink",
-    "Girl's Name's": ["Jenni Kim","Lalisa Manobal","Jisoo","Rosé"],
-    "Korean Group Name": "블랙핑크",
-    "Date Group Formed": "2016",
-    "Country": "Seoul, South Korea",
-    "Fandom Name": "BLINK",
-    "Instagram": "blackpinkofficial",
-    "Top 3 Song's": ["Ddu-Du Ddu-Du","BOOMBAYAH","Whistle"]
-  },
-  {
-    "Group Name": "BTS",
-    "Boy's Name's": ["Jung Kook","V","Jin","SUGA","Jimin","RM"],
-    "Korean Group Name": "방탄소년단",
-    "Date Group Formed": "2010",
-    "Country": "Seoul, South Korea",
-    "Fandom Name": "ARMY",
-    "Instagram": "bts.bighitofficial",
-    "Top 3 Song's": ["My Universe","Dynamite","I Need U."]
-  },
-  {
-    "Group Name": "Twice",
-    "Girl's Name's": ["Nayeon","Momo","Tzuyu","Sana","Jeongyeon","Jihyo","Mina","Chaeyoung","Dahyun"],
-    "Korean Group Name": "트와이스",
-    "Date Group Formed": "2015",
-    "Country": "South Korea",
-    "Fandom Name": "Once",
-    "Instagram": "twicetagram",
-    "Top 3 Song's": ["Feel Special","Fancy","Cheer Up"]
-  },
-  {
-    "Group Name": "iKon",
-    "Boy's Name's": ["Jinhwan","Bobby","Kim Donghyuk","Koo Jun-hoe","Song Yunhyeong","Jung Chan-woo"],
-    "Korean Group Name": "아이콘",
-    "Date Group Formed": "2015",
-    "Country": "Seoul, South Korea",
-    "Fandom Name": "IKONIC",
-    "Instagram": "withikonic",
-    "Top 3 Song's": ["Airplane","My Type","Apology"]
-  },
-  {
-    "Group Name": "Red Velvet",
-    "Girl's Name's": ["Irene","Joy","Yeri","Wendy","Seulgi"],
-    "Korean Group Name": "레드벨벳",
-    "Date Group Formed": "2014",
-    "Country": "Seoul,South Korea",
-    "Fandom Name": "ReVeluv",
-    "Instagram": "redvelvet.smtown",
-    "Top 3 Song's": ["Psycho","Feel My Rhythm","Bad Boy"]
-  },
-  {
-    "Group Name": "BigBang",
-    "Boy's Name's": ["T.O.P","Taeyang","G-Dragon","Daesung"],
-    "Korean Group Name": "빅뱅",
-    "Date Group Formed": "2006",
-    "Country": "Seoul, South Korea",
-    "Fandom Name": "V.I.P",
-    "Instagram": "bigbang_official",
-    "Top 3 Song's": ["FXXK IT","Haru Haru","Loser"]
-  }
+"id":"1",
+"GroupName":"BlackPink",
+"MemberNames":["Jenni Kim","Lalisa Manobal","Jisoo","Rosé"],
+"KoreanGroupName":"블랙핑크",
+"DateGroupFormed":"2016",
+"Country":"Seoul,SouthKorea",
+"FandomName":"BLINK",
+"Instagram":"blackpinkofficial",
+"Top3Songs":["Ddu-DuDdu-Du","BOOMBAYAH","Whistle"]
+"Picture:
+},
+{
+"id":"2",
+"GroupName":"BTS",
+"MemberNames":["JungKook","V","Jin","SUGA","Jimin","RM"],
+"KoreanGroupName":"방탄소년단",
+"DateGroupFormed":"2010",
+"Country":"Seoul,SouthKorea",
+"FandomName":"ARMY",
+"Instagram":"bts.bighitofficial",
+"Top3Songs":["MyUniverse","Dynamite","INeedU."]
+},
+{
+"id":"3",
+"GroupName":"Twice",
+"MemberNames":["Nayeon","Momo","Tzuyu","Sana","Jeongyeon","Jihyo","Mina","Chaeyoung","Dahyun"],
+"KoreanGroupName":"트와이스",
+"DateGroupFormed":"2015",
+"Country":"SouthKorea",
+"FandomName":"Once",
+"Instagram":"twicetagram",
+"Top3Songs":["FeelSpecial","Fancy","CheerUp"]
+},
+{
+"id":"4",
+"GroupName":"iKon",
+"MemberNames":["Jinhwan","Bobby","KimDonghyuk","KooJun-hoe","SongYunhyeong","JungChanwoo"],
+"KoreanGroupName":"아이콘",
+"DateGroupFormed":"2015",
+"Country":"Seoul,SouthKorea",
+"FandomName":"IKONIC",
+"Instagram":"withikonic",
+"Top3Songs":["Airplane","MyType","Apology"]
+},
+{
+"id":"5",
+"GroupName":"RedVelvet",
+"MemberNames":["Irene","Joy","Yeri","Wendy","Seulgi"],
+"KoreanGroupName":"레드벨벳",
+"DateGroupFormed":"2014",
+"Country5":"Seoul,SouthKorea",
+"FandomName":"ReVeluv",
+"Instagram":"redvelvet.smtown",
+"Top3Song's":["Psycho","FeelMyRhythm","BadBoy"]
+},
+{
+"id":"6",
+"GroupName":"BigBang",
+"MemberNames":["T.O.P","Taeyang","G-Dragon","Daesung"],
+"KoreanGroupName":"빅뱅",
+"DateGroupFormed":"2006",
+"Country":"Seoul,SouthKorea",
+"FandomName":"V.I.P",
+"Instagram":"bigbang_official",
+"Top3Songs":["FXXKIT","HaruHaru","Loser"]
+}
 ]
