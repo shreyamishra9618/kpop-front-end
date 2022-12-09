@@ -16,7 +16,6 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Homepage />} /> 
-            <Route path="/:id" element={<Homepage />} />
             <Route path="/wiki" element={<Wikipage />} /> 
             <Route path="/wiki/:id" element={<Wikipage />} />
             <Route path="/Login" element={<Login />}/>

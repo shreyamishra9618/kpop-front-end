@@ -1,12 +1,11 @@
 import React from 'react'
-import "./style.css"
+import '../WikiPage/style.css';
 import { AnimatePresence } from "framer-motion";
 
 import  List  from "../../components/List";
 import  Item  from "../../components/Item";
 
 import { useParams } from "react-router-dom"
-
 
 export default function Wikipage() {
   let { id } = useParams();

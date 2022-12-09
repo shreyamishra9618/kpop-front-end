@@ -4,13 +4,27 @@
 }
 
 .mainpage{
-    width:90%;
+    width:88%;
+    padding: 1%;
+
 }
 
+.quiz-card{
+    width:100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
 .userRanking{
-    width:5%;
+    width:10%;
+    background-color:aliceblue;
+    display: flex;
+    flex-direction: column;
 }
 
 h3{
-    color: beige;
+    color: black;
 }
