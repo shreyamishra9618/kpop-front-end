@@ -34,56 +34,56 @@ const  API = {
             }
         }).then(res=>res.json())
     },
-    createBlog:(todoObj,token)=>{
-        return fetch(`${URL_PREFIX}/api/todos`,{
+    createBlog:(blogObj,token)=>{
+        return fetch(`${URL_PREFIX}/api/blogs`,{
             method:"POST",
-            body:JSON.stringify(todoObj),
+            body:JSON.stringify(blogObj),
             headers:{
                 "Content-Type":"application/json",
                 "Authorization":`Bearer ${token}`
             }
         }).then(res=>res.json())
     },
-    deleteBlog:(todoId,token)=>{
-        return fetch(`${URL_PREFIX}/api/todos/${todoId}`,{
+    deleteBlog:(id,token)=>{
+        return fetch(`${URL_PREFIX}/api/blogs/${id}`,{
             method:"DELETE",
             headers:{
                 "Authorization":`Bearer ${token}`
             }
         }).then(res=>res.json())
     },
-    editBlog:(todoObj,todoId,token)=>{
-        return fetch(`${URL_PREFIX}/api/todos/${todoId}`,{
+    editBlog:(blogObj,id,token)=>{
+        return fetch(`${URL_PREFIX}/api/blogs/${id}`,{
             method:"PUT",
-            body:JSON.stringify(todoObj),
+            body:JSON.stringify(blogObj),
             headers:{
                 "Content-Type":"application/json",
                 "Authorization":`Bearer ${token}`
             }
         }).then(res=>res.json())
     },
-    createQuiz:(todoObj,token)=>{
-        return fetch(`${URL_PREFIX}/api/todos`,{
+    createQuiz:(quizObj,token)=>{
+        return fetch(`${URL_PREFIX}/api/quiz`,{
             method:"POST",
-            body:JSON.stringify(todoObj),
+            body:JSON.stringify(quizObj),
             headers:{
                 "Content-Type":"application/json",
                 "Authorization":`Bearer ${token}`
             }
         }).then(res=>res.json())
     },
-    deleteQuiz:(todoId,token)=>{
-        return fetch(`${URL_PREFIX}/api/todos/${todoId}`,{
+    deleteQuiz:(quiz_id,token)=>{
+        return fetch(`${URL_PREFIX}/api/quiz/${quiz_id}`,{
             method:"DELETE",
             headers:{
                 "Authorization":`Bearer ${token}`
             }
         }).then(res=>res.json())
     },
-    editQuiz:(todoObj,todoId,token)=>{
-        return fetch(`${URL_PREFIX}/api/todos/${todoId}`,{
+    editQuiz:(quizObj,quiz_id,token)=>{
+        return fetch(`${URL_PREFIX}/api/quiz/${quiz_id}`,{
             method:"PUT",
-            body:JSON.stringify(todoObj),
+            body:JSON.stringify(quizObj),
             headers:{
                 "Content-Type":"application/json",
                 "Authorization":`Bearer ${token}`
