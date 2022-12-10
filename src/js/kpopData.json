@@ -1,68 +1,69 @@
 [
 {
-    "Group Name": "BlackPink",
-    "Girl's Name's": ["","","",""],
-    "Korean Group Name": "",
-    "Date Group Formed": "1996-12-31",
-    "Country": "South Korea",
-    "Second Country": "",
-    "Instagram": "",
-    "Twitter": "",
-    "Top 3 Song's": ["","",""]
-  },
-  {
-    "Group Name": "BlackPink",
-    "Girl's Name's": ["","","",""],
-    "Korean Group Name": "",
-    "Date Group Formed": "1996-12-31",
-    "Country": "South Korea",
-    "Second Country": "",
-    "Instagram": "",
-    "Twitter": "",
-    "Top 3 Song's": ["","",""]
-  },
-  {
-    "Group Name": "BlackPink",
-    "Girl's Name's": ["","","",""],
-    "Korean Group Name": "",
-    "Date Group Formed": "1996-12-31",
-    "Country": "South Korea",
-    "Second Country": "",
-    "Instagram": "",
-    "Twitter": "",
-    "Top 3 Song's": ["","",""]
-  },
-  {
-    "Group Name": "BlackPink",
-    "Girl's Name's": ["","","",""],
-    "Korean Group Name": "",
-    "Date Group Formed": "1996-12-31",
-    "Country": "South Korea",
-    "Second Country": "",
-    "Instagram": "",
-    "Twitter": "",
-    "Top 3 Song's": ["","",""]
-  },
-  {
-    "Group Name": "BlackPink",
-    "Girl's Name's": ["","","",""],
-    "Korean Group Name": "",
-    "Date Group Formed": "1996-12-31",
-    "Country": "South Korea",
-    "Second Country": "",
-    "Instagram": "",
-    "Twitter": "",
-    "Top 3 Song's": ["","",""]
-  },
-  {
-    "Group Name": "BlackPink",
-    "Girl's Name's": ["","","",""],
-    "Korean Group Name": "",
-    "Date Group Formed": "1996-12-31",
-    "Country": "South Korea",
-    "Second Country": "",
-    "Instagram": "",
-    "Twitter": "",
-    "Top 3 Song's": ["","",""]
-  }
+"id":"1",
+"GroupName":"BlackPink",
+"MemberNames":["Jenni Kim","Lalisa Manobal","Jisoo","Rosé"],
+"KoreanGroupName":"블랙핑크",
+"DateGroupFormed":"2016",
+"Country":"Seoul,SouthKorea",
+"FandomName":"BLINK",
+"Instagram":"blackpinkofficial",
+"Top3Songs":["Ddu-DuDdu-Du","BOOMBAYAH","Whistle"]
+"Picture:
+},
+{
+"id":"2",
+"GroupName":"BTS",
+"MemberNames":["JungKook","V","Jin","SUGA","Jimin","RM"],
+"KoreanGroupName":"방탄소년단",
+"DateGroupFormed":"2010",
+"Country":"Seoul,SouthKorea",
+"FandomName":"ARMY",
+"Instagram":"bts.bighitofficial",
+"Top3Songs":["MyUniverse","Dynamite","INeedU."]
+},
+{
+"id":"3",
+"GroupName":"Twice",
+"MemberNames":["Nayeon","Momo","Tzuyu","Sana","Jeongyeon","Jihyo","Mina","Chaeyoung","Dahyun"],
+"KoreanGroupName":"트와이스",
+"DateGroupFormed":"2015",
+"Country":"SouthKorea",
+"FandomName":"Once",
+"Instagram":"twicetagram",
+"Top3Songs":["FeelSpecial","Fancy","CheerUp"]
+},
+{
+"id":"4",
+"GroupName":"iKon",
+"MemberNames":["Jinhwan","Bobby","KimDonghyuk","KooJun-hoe","SongYunhyeong","JungChanwoo"],
+"KoreanGroupName":"아이콘",
+"DateGroupFormed":"2015",
+"Country":"Seoul,SouthKorea",
+"FandomName":"IKONIC",
+"Instagram":"withikonic",
+"Top3Songs":["Airplane","MyType","Apology"]
+},
+{
+"id":"5",
+"GroupName":"RedVelvet",
+"MemberNames":["Irene","Joy","Yeri","Wendy","Seulgi"],
+"KoreanGroupName":"레드벨벳",
+"DateGroupFormed":"2014",
+"Country5":"Seoul,SouthKorea",
+"FandomName":"ReVeluv",
+"Instagram":"redvelvet.smtown",
+"Top3Song's":["Psycho","FeelMyRhythm","BadBoy"]
+},
+{
+"id":"6",
+"GroupName":"BigBang",
+"MemberNames":["T.O.P","Taeyang","G-Dragon","Daesung"],
+"KoreanGroupName":"빅뱅",
+"DateGroupFormed":"2006",
+"Country":"Seoul,SouthKorea",
+"FandomName":"V.I.P",
+"Instagram":"bigbang_official",
+"Top3Songs":["FXXKIT","HaruHaru","Loser"]
+}
 ]

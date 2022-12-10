@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 {/* Silvia- comment- need data - id */}
-export default function Card({ id, title }) {
+export default function Card({ id, title,Picture }) {
     return (
       <li className="card">
         <div className="card-content-container">
@@ -17,6 +17,9 @@ export default function Card({ id, title }) {
 {/* Silvia- comment- need data - id - feel free to change title/id to a better var name*/}
 
               <img className="card-image" src={`images/${id}.jpg`} alt="" />
+
+              <img className="card-image" src={Picture} alt="" />
+
             </motion.div>
             <motion.div
               className="title-container"

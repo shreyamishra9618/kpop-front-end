@@ -5,10 +5,10 @@ import { items } from "../../data";
 import "../Item/style.css"
 
 export default function Item({ id }) {
-  {/* Silvia - need data - any info from API, for example: debute date, menbers, brief intro.... */}
+  
 
-  const { title} = items.find(item => item.id === id);
-
+  const { title, GroupName, MemberNames, Picture, Country, KoreanGroupName,DateGroupFormed, FandomName,Instagram,Top3Songs } = items.find(item => item.id === id);
+  
   return (
     <>
       <motion.div
@@ -19,7 +19,6 @@ export default function Item({ id }) {
         style={{ pointerEvents: "auto" }}
         className="overlay"
       >
-        --! api place--!
         <Link to="/wiki" />
       </motion.div>
       <div className="card-content-container open">
@@ -28,7 +27,7 @@ export default function Item({ id }) {
             className="card-image-container"
             layoutId={`card-image-container-${id}`}
           >
-            <img className="card-image" src={`images/${id}.jpg`} alt="" />
+            <img className="card-image" src={Picture} alt="" />
           </motion.div>
           <motion.div
             className="title-container"
@@ -36,13 +35,17 @@ export default function Item({ id }) {
           >
           {/* Silvia - need data - group name */}
             <h2>{title}</h2>
+            
           </motion.div>
           <motion.div className="content-container" animate>
-            {/* Silvia - need data - any info from API, for example: debute date,popular songs, members, brief intro.... */}
-            {/* <p>{intro}</p>
-            <p>{members}</p> */}
-            <p>Sample info - BlackPINK IN YOUR AREA! </p>
-            <p>blackpink has 4 members</p>
+            <p>{GroupName}</p>
+            <p>{KoreanGroupName}</p>
+            <p>{MemberNames} </p>
+            <p>{Country}</p>
+            <p>{DateGroupFormed}</p>
+            <p>{FandomName}</p>
+            <p>{Instagram}</p>
+            <p>{Top3Songs}</p>
           </motion.div>
         </motion.div>
       </div>
