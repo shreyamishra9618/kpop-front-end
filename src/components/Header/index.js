@@ -19,8 +19,8 @@ export default function Header(props) {
         {props.isLoggedIn?<button onClick={logoutFunc}>Logout</button>:<Link to="/login">login</Link>}
       <div className="navbar">
 				<Navbar
-					currentPage={currentPage}
-					setCurrentPage={setCurrentPage}
+					currentPage={props.currentPage}
+					setCurrentPage={props.setCurrentPage}
 				></Navbar>
     
 			</div>

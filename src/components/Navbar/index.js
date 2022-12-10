@@ -2,40 +2,40 @@ import React from 'react';
 import { Link } from "react-router-dom"
 import '../Navbar/style.css';
 
-function Navbar() {
+function Navbar({currentPage, setCurrentPage}) {
 
   return (
     <nav className="navbarPage">
-      <lo className="nav-item">
-          <Link to="/">Home</Link>
-        </lo>
-        <lo className="nav-item" >
-          <Link to="/dashboard"> My Dashboard</Link>
-        </lo>
-        <lo className="nav-item" >
-          <Link to="/wiki"> Kpop Wiki</Link>
-        </lo>
-        <lo className="nav-item" >
+      <ul>
+        <li className={currentPage === 'Home' ? 'nav-item active' : 'nav-item'} >
+          <Link to="/"  onClick={() => setCurrentPage('Home')}>Home</Link>
+        </li>
+        <li className={currentPage === 'Dashboard' ? 'nav-item active' : 'nav-item'} >
+          <Link to="/dashboard"  onClick={() => setCurrentPage('Dashboard')}> My Dashboard</Link>
+        </li>
+        <li className={currentPage === 'Wiki' ? 'nav-item active' : 'nav-item'} >
+          <Link to="/wiki"  onClick={() => setCurrentPage('Wiki')}> Kpop Wiki</Link>
+        </li>
+        <li className="nav-item" >
           <Link to="/createpost">Create a quiz</Link>
-        </lo>
-        <lo className="nav-item" >
+        </li>
+        <li className="nav-item" >
           <Link to="/createblog">Create a blog</Link>
-        </lo>
-        <lo className="nav-item" >
-          <Link to="/triviaquiz">Quiz</Link>
-        </lo>
-        <lo className="nav-item">
-          <Link to="/login">Login</Link>
-        </lo>
-
+        </li>
+        <li  className={currentPage === 'Triviaquiz' ? 'nav-item active' : 'nav-item'} >
+          <Link to="/triviaquiz" onClick={() => setCurrentPage('Triviaquiz')}>Quiz</Link>
+        </li>
+        <li className={currentPage === 'Login' ? 'nav-item active' : 'nav-item'}>
+          <Link to="/login" onClick={() => setCurrentPage('Login')}>Login</Link>
+        </li>
+        </ul>
         <div>
-        <form>
-          <input id="searchInput" type="text" placeholder="search kpop group"/>
-          <button id="searchButton">Search</button>
-        </form>
-        <p>Popular search: xxxxx,categorys
-        </p>
-    </div>
+          <form>
+            <input id="searchInput" type="text" placeholder="search kpop group"/>
+            <button id="searchButton">Search</button>
+          </form>
+          {/* <p>Popular search: xxxxx,categorys</p> */}
+        </div>
     </nav>
   );
 }

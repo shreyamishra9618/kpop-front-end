@@ -19,6 +19,8 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [token, setToken] = useState("")
 
+  const [currentPage, setCurrentPage] = useState('Home');
+  
   useEffect(() => {
     const storedToken = localStorage.getItem("token")
     if (storedToken) {
@@ -72,7 +74,7 @@ function App() {
   return (
     <div className="container">
       <Router>
-        <Header isLoggedIn={isLoggedIn} handleLogout={handleLogout}/>
+        <Header isLoggedIn={isLoggedIn} handleLogout={handleLogout} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/wiki" element={<Wikipage />} />

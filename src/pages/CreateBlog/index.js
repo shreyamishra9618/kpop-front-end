@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
-import CloudinaryUploadWidgetBlog from '../../components/CloudinaryUploadWidgetBlog';
-
+import ImageUploader from '../../components/ImageUploader';
+import "../CreatePost/style.css"
 
 export default function CreateBlog() {
 
-    const [keyword, setKeyword] = useState('')
-    const [blogText, setBlogText] = useState('')
-
-
+    // *** Blog data to be stored
+    const [keyword, setKeyword] = useState('');
+    const [blogText, setBlogText] = useState('');
+    // blog image src address: `https://res.cloudinary.com/digyae86x/image/upload/v1670654642/${imageCloudinaryData.public_id}`
+    
+    // for uploading images
     const [errMsg, setErrMsg] = useState('')
+    const [imageCloudinaryData, setImageCloudinaryData] = useState('');
 
 
     // blog content submit
@@ -21,14 +24,21 @@ export default function CreateBlog() {
             setErrMsg('Please type in a k-pop star title');
             return;
         }
+        if (!imageCloudinaryData){
+            setErrMsg('Please upload an image');
+            return;
+        }
         if (!blogText) {
             setErrMsg('Please enter blog content');
             return;
         }
+
         setErrMsg('');    
     }
 
-     
+    const handleImgResponse = (response) => {
+        setImageCloudinaryData(response.data)
+    } 
 
     return (
         <div className="createpost">
@@ -45,8 +55,10 @@ export default function CreateBlog() {
                 <div className='blog-input-box'>
                     <section className='inputline qImg'>
                         <label>Blog Image: </label>
-                        <CloudinaryUploadWidgetBlog  />
-                        <img id='picture-preview' src="./images/Placeholder-Graphic-Icon.jpg" alt="placeholder"/>
+                        <ImageUploader 
+                            imageCloudinaryData={imageCloudinaryData} 
+                            handleImgResponse={handleImgResponse}/>
+
                     </section>
                     <section className='inputline'>
                         <label>Blog Content</label>
