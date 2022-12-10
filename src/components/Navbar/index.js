@@ -6,36 +6,36 @@ function Navbar() {
 
   return (
     <nav className="navbarPage">
-      <lo className="nav-item">
-          <Link to="/">Home</Link>
-        </lo>
-        <lo className="nav-item" >
-          <Link to="/dashboard"> My Dashboard</Link>
-        </lo>
-        <lo className="nav-item" >
+      <ul>
+        <li className={currentPage === 'Home' ? 'nav-item active' : 'nav-item'} >
+          <Link to="/"  onClick={() => handleLinkClick('Home')}>Home</Link>
+        </li>
+        <li className={currentPage === 'Dashboard' ? 'nav-item active' : 'nav-item'} >
+          <Link to="/dashboard"  onClick={() => handleLinkClick('Dashboard')}> My Dashboard</Link>
+        </li>
+        <li className={currentPage === 'Wiki' ? 'nav-item active' : 'nav-item'} >
           <Link to="/wiki"> Kpop Wiki</Link>
-        </lo>
-        <lo className="nav-item" >
+        </li>
+        <li className="nav-item" >
           <Link to="/createpost">Create a quiz</Link>
-        </lo>
-        <lo className="nav-item" >
+        </li>
+        <li className="nav-item" >
           <Link to="/createblog">Create a blog</Link>
-        </lo>
-        <lo className="nav-item" >
+        </li>
+        <li  className={currentPage === 'Triviaquiz' ? 'nav-item active' : 'nav-item'} >
           <Link to="/triviaquiz">Quiz</Link>
-        </lo>
-        <lo className="nav-item">
+        </li>
+        <li className={currentPage === 'Login' ? 'nav-item active' : 'nav-item'}>
           <Link to="/login">Login</Link>
-        </lo>
-
+        </li>
+        </ul>
         <div>
-        <form>
-          <input id="searchInput" type="text" placeholder="search kpop group"/>
-          <button id="searchButton">Search</button>
-        </form>
-        <p>Popular search: xxxxx,categorys
-        </p>
-    </div>
+          <form>
+            <input id="searchInput" type="text" placeholder="search kpop group"/>
+            <button id="searchButton">Search</button>
+          </form>
+          {/* <p>Popular search: xxxxx,categorys</p> */}
+        </div>
     </nav>
   );
 }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import QuestionSet from '../../components/QuestionSet';
-import CloudinaryUploadWidget from "../../components/CloudinaryUploadWidget";
+// import CloudinaryUploadWidget from "../../components/CloudinaryUploadWidget";
 import "./style.css"
 
 
@@ -9,54 +9,11 @@ export default function CreatePost() {
     const [keyword, setKeyword] = useState('')
     const [triviaTitle, setTriviaTitle] = useState('')
     const [errMsg, setErrMsg] = useState('')
+    const [currentQIdx, setCurrentQIdx] = useState(0);
     const [questionSet, setQuestionSet] = useState([
         { 
             questionText: '', 
-            correctIndex : '',
-			answerOptions: [],
-        },
-        { 
-            questionText: '', 
-            correctIndex : '',
-			answerOptions: [],
-        },
-        { 
-            questionText: '', 
-            correctIndex : '',
-			answerOptions: [],
-        },
-        { 
-            questionText: '', 
-            correctIndex : '',
-			answerOptions: [],
-        },
-        { 
-            questionText: '', 
-            correctIndex : '',
-			answerOptions: [],
-        },
-        { 
-            questionText: '', 
-            correctIndex : '',
-			answerOptions: [],
-        },
-        { 
-            questionText: '', 
-            correctIndex : '',
-			answerOptions: [],
-        },
-        { 
-            questionText: '', 
-            correctIndex : '',
-			answerOptions: [],
-        },
-        { 
-            questionText: '', 
-            correctIndex : '',
-			answerOptions: [],
-        },
-        { 
-            questionText: '', 
+            imageUrl:'',
             correctIndex : '',
 			answerOptions: [],
         }
@@ -121,7 +78,10 @@ export default function CreatePost() {
         newQuestionSet.splice(i, 1);
         setQuestionSet(newQuestionSet)
     }
+    
+    const handleQuizNav = (newIdx) => {
 
+    }
     return (
         <div className="createpost">
             <div className="create-container">
@@ -139,22 +99,23 @@ export default function CreatePost() {
                         <input type="text" id="title" name="title"  className="txtInput" value={triviaTitle} onChange={e=>setTriviaTitle(e.target.value)}/>
                     </section>
 
-                    {questionSet.map((item,index)=> (
                         <QuestionSet 
-                            index={index} 
-                            item={item} 
+                            currentQIdx={currentQIdx} 
                             handleQuestionSetChange={handleQuestionSetChange}
                             removeQuestion={removeQuestion}
-                            key={index}
                             />
-                    ))}
+
+                    <div class="quiz-nav">
+                        {currentQIdx>0 && <a href="#" onClick={()=>handleQuizNav(currentQIdx-1)}>Prev</a> }
+                        {currentQIdx<10 && <a href="#" onClick={()=>handleQuizNav(currentQIdx+1)}>Next</a> }
+                    </div>
 
                     <div className="button-section">
-                        {questionSet.length<10 ? (
+                        {/* {questionSet.length<10 ? (
                             <button className="button add" type="button" onClick={() => addQuestion()}>+ Add more question</button> 
                         ):(
                             <p>Maxium 10 questions</p>
-                        )}
+                        )} */}
                         <button className="button submit" type="submit" onClick={handleQuizFormSubmit}>Create a Trivia Quiz!</button>
                         <p className="errmrg">{errMsg}</p>
                     </div>
@@ -162,7 +123,7 @@ export default function CreatePost() {
                 </div>
 
             </form>
-            <CloudinaryUploadWidget />
+
             </div>
         </div>    
     )

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import CloudinaryUploadWidgetBlog from '../../components/CloudinaryUploadWidgetBlog';
+// import CloudinaryUploadWidgetBlog from '../../components/CloudinaryUploadWidgetBlog';
 
 
 export default function CreateBlog() {
@@ -28,7 +28,9 @@ export default function CreateBlog() {
         setErrMsg('');    
     }
 
-     
+    const uploadImage = (files) => {
+        console.log(files[0]);
+    }
 
     return (
         <div className="createpost">
@@ -45,8 +47,9 @@ export default function CreateBlog() {
                 <div className='blog-input-box'>
                     <section className='inputline qImg'>
                         <label>Blog Image: </label>
-                        <CloudinaryUploadWidgetBlog  />
-                        <img id='picture-preview' src="./images/Placeholder-Graphic-Icon.jpg" alt="placeholder"/>
+                        {/* <CloudinaryUploadWidgetBlog  /> */}
+                        {/* <img id='picture-preview' src="./images/Placeholder-Graphic-Icon.jpg" alt="placeholder"/> */}
+                        <input type="file" onChange={(event)=>{uploadImage(event.target.files)}} />
                     </section>
                     <section className='inputline'>
                         <label>Blog Content</label>

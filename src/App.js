@@ -19,6 +19,8 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [token, setToken] = useState("")
 
+  const [currentPage, setCurrentPage] = useState('Home');
+  
   useEffect(() => {
     const storedToken = localStorage.getItem("token")
     if (storedToken) {
