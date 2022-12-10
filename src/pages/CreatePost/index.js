@@ -1,67 +1,27 @@
 import React, { useState } from 'react';
 import QuestionSet from '../../components/QuestionSet';
-import CloudinaryUploadWidget from "../../components/CloudinaryUploadWidget";
 import "./style.css"
 
 
 export default function CreatePost() {
 
+    // *** Quiz data to be stored
     const [keyword, setKeyword] = useState('')
     const [triviaTitle, setTriviaTitle] = useState('')
-    const [errMsg, setErrMsg] = useState('')
-    const [questionSet, setQuestionSet] = useState([
+    const [questionSetArray, setQuestionSetArray] = useState([
         { 
             questionText: '', 
-            correctIndex : '',
-			answerOptions: [],
-        },
-        { 
-            questionText: '', 
-            correctIndex : '',
-			answerOptions: [],
-        },
-        { 
-            questionText: '', 
-            correctIndex : '',
-			answerOptions: [],
-        },
-        { 
-            questionText: '', 
-            correctIndex : '',
-			answerOptions: [],
-        },
-        { 
-            questionText: '', 
-            correctIndex : '',
-			answerOptions: [],
-        },
-        { 
-            questionText: '', 
-            correctIndex : '',
-			answerOptions: [],
-        },
-        { 
-            questionText: '', 
-            correctIndex : '',
-			answerOptions: [],
-        },
-        { 
-            questionText: '', 
-            correctIndex : '',
-			answerOptions: [],
-        },
-        { 
-            questionText: '', 
-            correctIndex : '',
-			answerOptions: [],
-        },
-        { 
-            questionText: '', 
+            imageUrl:'',
             correctIndex : '',
 			answerOptions: [],
         }
 
     ])
+    // *********
+
+    const [imageCloudinaryData, setImageCloudinaryData] = useState('');
+    const [currentQIdx, setCurrentQIdx] = useState(0);
+    const [errMsg, setErrMsg] = useState('')
 
     const handleQuizFormSubmit = e => {
         e.preventDefault();
@@ -77,51 +37,87 @@ export default function CreatePost() {
         }
 
         // check if all of inputs are inserted
-        const missingQuestion = questionSet.filter(q => !q.questionText ||  q.answerOptions.length < 4 ||  q.answerOptions.includes('') || !q.correctIndex )
+        const missingQuestion = questionSetArray.filter(q => !q.questionText ||  q.answerOptions.length < 4 ||  q.answerOptions.includes('') || !q.correctIndex )
         if ( missingQuestion.length  ) {
             setErrMsg('There is a missing input. Please fill out all inputs');
             return;
         }
         setErrMsg(''); 
         console.log('*** Quizset created!!!');
-        console.log(questionSet)
+        console.log(questionSetArray)
     }   
 
-    const handleQuestionSetChange = (i, e) => {
-        let newQuestionSet = [...questionSet];
+    const handleQuestionSetChange = (e) => {
+        let newQuestionSetArray = [...questionSetArray];
+        const currentAnsArr = newQuestionSetArray[currentQIdx]['answerOptions'];
         switch ( e.target.name ) {
             case 'a1' :
-                newQuestionSet[i]['answerOptions'][0] = e.target.value;
+                currentAnsArr[0] = e.target.value;
                 break;
             case 'a2' :
-                newQuestionSet[i]['answerOptions'][1] = e.target.value;
+                currentAnsArr[1] = e.target.value;
                 break;
             case 'a3' :
-                newQuestionSet[i]['answerOptions'][2] = e.target.value;
+                currentAnsArr[2] = e.target.value;
                 break;
             case 'a4' :
-                newQuestionSet[i]['answerOptions'][3] = e.target.value;
+                currentAnsArr[3] = e.target.value;
                 break;
             default:
-                newQuestionSet[i][e.target.name] = e.target.value;
+                newQuestionSetArray[currentQIdx][e.target.name] = e.target.value;
         } 
-        setQuestionSet(newQuestionSet);
+        setQuestionSetArray(newQuestionSetArray);
+        setErrMsg('');
     }
 
+    const handleImageSrc = (img_public_id) => {
+        let newQuestionSetArray = [...questionSetArray];
+        newQuestionSetArray[currentQIdx]['imageUrl'] = `https://res.cloudinary.com/digyae86x/image/upload/v1670654642/${img_public_id}`
+        setQuestionSetArray(newQuestionSetArray);      
+    } 
+
+    const deleteImageSrc = () => {
+        let newQuestionSetArray = [...questionSetArray];
+        newQuestionSetArray[currentQIdx]['imageUrl'] = ''
+        setQuestionSetArray(newQuestionSetArray);      
+    } 
+
     const addQuestion = () => {
-        setQuestionSet([...questionSet, { 
+        setQuestionSetArray([...questionSetArray, { 
             questionText: '', 
+            imageUrl:'',
             correctIndex : '',
 			answerOptions: [],
         }])
      }
 
-     let removeQuestion = (i) => {
-        let newQuestionSet= [...questionSet];
-        newQuestionSet.splice(i, 1);
-        setQuestionSet(newQuestionSet)
+     let removeQuestion = () => {
+        let newQuestionSetArray= [...questionSetArray];
+        newQuestionSetArray.splice(currentQIdx, 1);
+        setQuestionSetArray(newQuestionSetArray);
+        setCurrentQIdx(currentQIdx-1);
+        setErrMsg('');
     }
-
+    
+    const handleQuizNav = (newIdx) => {
+        const curQ = questionSetArray[currentQIdx];
+        if ( !curQ.questionText ||
+            curQ.answerOptions.length < 4 ||  
+            curQ.answerOptions.includes('') || 
+            !curQ.correctIndex ||
+            curQ.imageUrl === ''
+            ) {
+            setErrMsg('There is a missing input. Please fill out all inputs');
+            return;
+        }
+        if ( newIdx < 0 ) return;
+        if ( newIdx === questionSetArray.length ) {
+            addQuestion();
+        }
+        setCurrentQIdx(newIdx);
+        setErrMsg('');
+        setImageCloudinaryData('');
+    }
     return (
         <div className="createpost">
             <div className="create-container">
@@ -139,30 +135,38 @@ export default function CreatePost() {
                         <input type="text" id="title" name="title"  className="txtInput" value={triviaTitle} onChange={e=>setTriviaTitle(e.target.value)}/>
                     </section>
 
-                    {questionSet.map((item,index)=> (
                         <QuestionSet 
-                            index={index} 
-                            item={item} 
+                            currentQIdx={currentQIdx} 
+                            item = {questionSetArray[currentQIdx]}
                             handleQuestionSetChange={handleQuestionSetChange}
                             removeQuestion={removeQuestion}
-                            key={index}
+                            handleImageSrc={handleImageSrc}
+                            deleteImageSrc={deleteImageSrc}
+                            imageCloudinaryData={imageCloudinaryData}
+                            setImageCloudinaryData={setImageCloudinaryData}
                             />
-                    ))}
+
+                    <div className="quiz-nav">
+                        <button type='button' 
+                            className={currentQIdx>0 ? 'prev':'prev inactive'} 
+                            onClick={()=>handleQuizNav(currentQIdx-1)}>Prev</button> 
+                            <span>Total Question: {questionSetArray.length} (maximum 10)</span>
+                        {currentQIdx<10 && 
+                            <button type='button' 
+                                    className='next'
+                                    onClick={()=>handleQuizNav(currentQIdx+1)}>{currentQIdx===(questionSetArray.length-1)?'Add more':'Next'}</button> }
+                    </div>
 
                     <div className="button-section">
-                        {questionSet.length<10 ? (
-                            <button className="button add" type="button" onClick={() => addQuestion()}>+ Add more question</button> 
-                        ):(
-                            <p>Maxium 10 questions</p>
-                        )}
+                    <p className="errmrg">{errMsg}</p>
                         <button className="button submit" type="submit" onClick={handleQuizFormSubmit}>Create a Trivia Quiz!</button>
-                        <p className="errmrg">{errMsg}</p>
+                        
                     </div>
                     
                 </div>
 
             </form>
-            <CloudinaryUploadWidget />
+
             </div>
         </div>    
     )

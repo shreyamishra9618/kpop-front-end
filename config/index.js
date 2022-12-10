@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const userRoutes = require("./userController")
 // const Routes = require("./Controller")
-const kpop =require("kpop")
 
 router.get("/",(req,res)=>{
     res.send("this is the homepage")
