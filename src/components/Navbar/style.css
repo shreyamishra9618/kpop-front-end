@@ -1,1 +1,3 @@
 .nav-item{margin-right:10px;}
+.navbarPage ul{display:flex;}
+.nav-item.active{font-weight:bold;text-decoration: underline;}

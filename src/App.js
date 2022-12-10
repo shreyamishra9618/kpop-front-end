@@ -74,7 +74,7 @@ function App() {
   return (
     <div className="container">
       <Router>
-        <Header isLoggedIn={isLoggedIn} handleLogout={handleLogout}/>
+        <Header isLoggedIn={isLoggedIn} handleLogout={handleLogout} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/wiki" element={<Wikipage />} />
