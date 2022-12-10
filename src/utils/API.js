@@ -26,6 +26,22 @@ const  API = {
         return fetch(`${URL_PREFIX}/api/users/${userId}`).then(res=>res.json())
 
     },
+    getAllBlogs:()=>{
+        return fetch(`${URL_PREFIX}/api/blogs`).then(res=>res.json())
+
+    },
+    getUserBlogs:(userId)=>{
+        return fetch(`${URL_PREFIX}/api/blogs/${userId}`).then(res=>res.json())
+
+    },
+    getAllQuiz:()=>{
+        return fetch(`${URL_PREFIX}/api/quiz`).then(res=>res.json())
+
+    },
+    getUserQuiz:(userId)=>{
+        return fetch(`${URL_PREFIX}/api/quiz/${userId}`).then(res=>res.json())
+
+    },
     getUserFromToken:(token)=>{
         return fetch(`${URL_PREFIX}/api/users/getuserfromtoken`,{
             method:"GET",
@@ -84,6 +100,34 @@ const  API = {
         return fetch(`${URL_PREFIX}/api/quiz/${quiz_id}`,{
             method:"PUT",
             body:JSON.stringify(quizObj),
+            headers:{
+                "Content-Type":"application/json",
+                "Authorization":`Bearer ${token}`
+            }
+        }).then(res=>res.json())
+    },
+    createQuestions:(questionObj,token)=>{
+        return fetch(`${URL_PREFIX}/api/questions`,{
+            method:"POST",
+            body:JSON.stringify(questionObj),
+            headers:{
+                "Content-Type":"application/json",
+                "Authorization":`Bearer ${token}`
+            }
+        }).then(res=>res.json())
+    },
+    deleteQuestions:(Questions_id,token)=>{
+        return fetch(`${URL_PREFIX}/api/questions/${Questions_id}`,{
+            method:"DELETE",
+            headers:{
+                "Authorization":`Bearer ${token}`
+            }
+        }).then(res=>res.json())
+    },
+    editQuestions:(questionObj,Questions_id,token)=>{
+        return fetch(`${URL_PREFIX}/api/questions/${Questions_id}`,{
+            method:"PUT",
+            body:JSON.stringify(questionObj),
             headers:{
                 "Content-Type":"application/json",
                 "Authorization":`Bearer ${token}`
