@@ -1,8 +1,9 @@
 .blog-container{
-    width:100%;
+    width:80%;
     background-color:lightpink;
     margin:3px;
     border-radius: 10px;
+    align-content: center;
 }
 .blog-container h1 {
     text-align: center;

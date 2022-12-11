@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import '../Dashboard/style.css';
 import DashboardCard from '../../components/DashboardCard';
-import { items } from "../../data"
+// import { items } from "../../data"
 // Start of Modification by Shreya
 import API from '../../utils/API'
 
