@@ -1,10 +1,23 @@
-.quiz-container{
-    width:30%;
+.blog-container{
+    width:100%;
     background-color:lightpink;
     margin:3px;
     border-radius: 10px;
 }
+.blog-container h1 {
+    text-align: center;
+   
+}
+.blog-container span{
+    font-size: medium;
+    color:rgb(54, 2, 72);
+    padding: 2%;
+    margin: 2%;
+    text-align: left;
+}
 
-img{
-    width:100%;
+.blog-container img{
+    width:80%;
+    margin-left: 8%;
+    border-radius:20px;
 }
