@@ -1,23 +1,25 @@
 import React from 'react'
 import "./style.css"
 
-export default function DashboardCard({ info }) {
-    const { id, username, title, numberofLike, category } = info;
+export default function DashboardCard(info) {
+    // const { id, description, picture} = info;
     return (
-        <div className='quiz-container'>
+        <div className='blog-container'>
             {/* need fetch - link to the quiz */}
+                   
+                    <div className="blog-card-info">
+                    <h1>{info.title}</h1>
                     <div>
-                        <img src={`images/${id}.jpg`} alt="" />
+                        <img src={info.picture} alt="blog_image" />
                     </div>
-                    <div className="quiz-card-info">
-                        <span >{category}</span>
-                        <h2>{title}</h2>
-                        <h4>created by {username}</h4>
-                        <p> {numberofLike} Likes</p>
+                        <span >{info.description}</span>
+                        
+                        <h4>created by {info.username}</h4>
+                        {/* <p> {numberofLike} Likes</p> */}
                     </div>
                     <div>
-                        <button>Delete</button>
-                        <button>Edit</button>
+                        {/* <button>Delete</button>
+                        <button>Edit</button> */}
                      </div>
         </div>
 
