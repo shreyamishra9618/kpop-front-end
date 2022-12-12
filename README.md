@@ -13,6 +13,9 @@ We have created a Kpop trivia and blog site. This site is for fans of Kpop! If y
 ## Mock up
 
 
+## Resources
+Wikipedia was used to gather all of the info within our wiki page. Google Translate was used to gather the correct usage of the Korean names of each group and their members.
+
 ## Collaboration
 Mo Risk-
 
