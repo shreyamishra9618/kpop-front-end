@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import QuestionSet from '../../components/QuestionSet';
 import "./style.css"
+import API from '../../utils/API';
 
 
-export default function CreatePost() {
-
+export default function CreatePost(props) {
+    
     // *** Quiz data to be stored
     const [keyword, setKeyword] = useState('')
     const [triviaTitle, setTriviaTitle] = useState('')
@@ -22,6 +23,8 @@ export default function CreatePost() {
     const [imageCloudinaryData, setImageCloudinaryData] = useState('');
     const [currentQIdx, setCurrentQIdx] = useState(0);
     const [errMsg, setErrMsg] = useState('')
+
+    const [quizId, setQuizId] = useState('');
 
     const handleQuizFormSubmit = e => {
         e.preventDefault();
@@ -44,7 +47,57 @@ export default function CreatePost() {
         }
         setErrMsg(''); 
         console.log('*** Quizset created!!!');
-        console.log(questionSetArray)
+
+        const newQuizItem = {
+            title: triviaTitle,
+            like: 0,
+            user_id: props.userId,
+        }
+        console.log("*** new quiz item");
+        console.log(newQuizItem);
+        console.log(questionSetArray);
+
+        API.createQuiz(newQuizItem, props.token)
+        .then(data=>{
+            console.log(data);
+            setQuizId(data.quiz_id);
+
+            let newQuestionItem = {}
+            questionSetArray.forEach((qSet)=>{
+                newQuestionItem = {
+                    picture: qSet.imageUrl,
+                    question_content: qSet.questionText,
+                    option1: qSet.answerOptions[0],
+                    option2: qSet.answerOptions[1],
+                    option3: qSet.answerOptions[2],
+                    option4: qSet.answerOptions[3],
+                    correct_ans: qSet.correctIndex,
+                    quiz_id:data.quiz_id,
+                }
+                API.createQuestion(newQuestionItem, props.token ).then(Qdata=> {
+                    console.log("***A Question created");
+                    console.log(Qdata);
+                })
+                // API.createQuestions()
+            });
+        }) 
+        
+        //reset
+        setErrMsg('');       
+        // setKeyword('');
+        // setTriviaTitle('');
+        // setQuestionSetArray([
+        //     { 
+        //         questionText: '', 
+        //         imageUrl:'',
+        //         correctIndex : '',
+        //         answerOptions: [],
+        //     }
+        // ])
+        // setImageCloudinaryData('');
+        // setCurrentQIdx(0);
+
+
     }   
 
     const handleQuestionSetChange = (e) => {
@@ -122,6 +175,13 @@ export default function CreatePost() {
         <div className="createpost">
             <div className="create-container">
             <h2>Create a Trivia Quiz!</h2>
+            
+            {quizId&& (
+            <div className="quizCreated">
+                Your quiz has been created : id {quizId}
+            </div>
+            )}
+
             <form>
                 <section className='inputline key'>
                     <label>Keyword:</label>

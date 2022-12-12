@@ -4,7 +4,7 @@ import "./style.css"
 export default function Footer() {
   return (
     <div className="footer">
-      <h1>❤️ K-pop Trivia blog footer ❤️</h1>
+      <p>❤️ K-pop Trivia Fever ❤️</p>
     </div>
   )
 }

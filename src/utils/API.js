@@ -42,6 +42,10 @@ const  API = {
         return fetch(`${URL_PREFIX}/api/quiz/${userId}`).then(res=>res.json())
 
     },
+    getOneQuiz:(quizId)=>{
+        return fetch(`${URL_PREFIX}/api/quiz/${quizId}`).then(res=>res.json())
+
+    },
     getUserFromToken:(token)=>{
         return fetch(`${URL_PREFIX}/api/users/getuserfromtoken`,{
             method:"GET",
@@ -106,7 +110,16 @@ const  API = {
             }
         }).then(res=>res.json())
     },
-    createQuestions:(questionObj,token)=>{
+    addLike:(quizObj,quiz_id)=>{
+        return fetch(`${URL_PREFIX}/api/quiz/like/${quiz_id}`,{
+            method:"PUT",
+            body:JSON.stringify(quizObj),
+            headers:{
+                "Content-Type":"application/json",
+            }
+        }).then(res=>res.json())
+    },
+    createQuestion:(questionObj,token)=>{
         return fetch(`${URL_PREFIX}/api/questions`,{
             method:"POST",
             body:JSON.stringify(questionObj),
