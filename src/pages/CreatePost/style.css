@@ -27,7 +27,7 @@
 .createpost .qInputSet .button.remove {position:absolute;top:5px;right:5px;aspect-ratio:calc(16/9);width:30px;background:#fff;border-radius: 5px;border:1px solid #ccc;}
 .createpost .button-section{position:relative;text-align: center;}
 .createpost .button.add{position:absolute;top:0;right:0;padding:2px 5px;}
-.createpost .button.submit{padding:10px 30px;background-color: blue;border-radius: 10px;color:#fff;}
+.button.submit{padding:10px 30px;background-color: blue;border-radius: 10px;color:#fff;}
 /* .createpost .qInputSet .cloudinary-button{cursor: pointer;border:1px solid #666;padding:6px 10px;background-color: aliceblue;border-radius: 4px;font-size:0.9em;} */
 .createpost .cloudinary-button{padding:5px 14px;}
 .createpost .qImg img{width:30%;border-radius: 5px;object-fit: cover;}
@@ -40,3 +40,6 @@
 .createpost .image-uploader input{background-color:#fff;}
 .createpost .image-uploader button{border-radius: 4px;padding:4px 10px;background-color: rgb(226, 141, 194);}
 .createpost .inputline.corrA select{padding:2px 10px;}
+
+.blog-input-box{background-color:rgb(227, 225, 225);border-radius: 10px;padding:15px;}
+.quizCreated{color:red;margin:5px 0;font-weight:bold;}

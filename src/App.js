@@ -27,7 +27,8 @@ function App() {
       console.log(storedToken)
       API.getUserFromToken(storedToken).then(data => {
         if (data.user) {
-          console.log(data)
+          console.log("**stored user data**")
+          console.log(data);
           setToken(storedToken)
           setIsLoggedIn(true)
           setUserId(data.user.id)
@@ -86,6 +87,9 @@ function App() {
             handleSignupSubmit={handleSignupSubmit}
           />} />
           <Route path="/triviaquiz" element={<TriviaQuiz />} />
+          <Route path="/triviaquiz/:quizId" element={<TriviaQuiz 
+            token={token}
+          />} />
           <Route path="/createpost" element={<CreatePost 
             isLoggedIn={isLoggedIn}
             userId={userId}

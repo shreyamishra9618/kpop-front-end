@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-// import { AnimatePresence, motion } from "framer-motion";
+import {useParams} from "react-router-dom";
 import { motion } from "framer-motion";
+import API from '../../utils/API';
 import "./style.css"
 
 const variants = {
@@ -18,130 +19,168 @@ const variants = {
     }
 }
 
-export default function TriviaQuiz() {
-    const [currentQuestion, setCurrentQuestion] = useState(0);
+export default function TriviaQuiz(props) {
+    const { quizId } = useParams();
+    console.log("quizId recieved:"+ quizId );
+
+    const [curQIdx, setCurQIdx] = useState(0);
     const [showScore, setShowScore] = useState(false);
     const [score, setScore] = useState(0);
     const [correctMsg, setCorrectMsg] = useState('');
     const [timeoutPeriod, setTimeoutPeriod] = useState(false);
 
-    const questions = [
-		{
-			questionText: 'Which member spent their teen years in Australia as an exchange student?',
-            imageUrl: 'https://images.indianexpress.com/2022/06/BTS1200-1.jpeg',
-            correctIndex : 0,
-			answerOptions: ['Jin', 'V','Suga', 'J-Hope'],
-		},
-		{
-			questionText: 'What does BTS stand for?',
-            imageUrl: 'https://pyxis.nymag.com/v1/imgs/812/a5d/694b070dca8db47fc9338f3c65fbe3d0c6-7-bts.rsquare.w330.jpg',
-			correctIndex : 2,
-            answerOptions: ['Behind the Scene', 'Broccoli Tomato Sausage', 'Bangtan Sonyeondan', 'Burn The Stage'],
-		},
-		{
-			questionText: 'What\'s the name of their new single?',
-            imageUrl: 'https://resize.indiatvnews.com/en/resize/newbucket/730_-/2022/10/bts-7-1666156252.jpg',
-            correctIndex : 0,
-			answerOptions: ['Butter', 'Margarine', 'Flora', 'Lurpak'],
-		},
-		{
-			questionText: 'How many members does BTS have?',
-            imageUrl: 'https://img.i-scmp.com/cdn-cgi/image/fit=contain,width=1098,format=auto/sites/default/files/styles/1200x800/public/d8/images/methode/2020/12/10/5bc61682-3523-11eb-8d89-a7d6b31c4b8a_image_hires_164759.jpeg?itok=HiuJ1k21&v=1607590085',
-			correctIndex : 2,
-            answerOptions: ['6', '5', '7', '4'],
-		},
-	];
+    const [quizTitle , setQuizTitle] = useState('');
+    const [creator , setCreator] = useState('');
+    const [likeNum , setLikeNum] = useState(0);
+    const [questions, setQuestions] = useState([]);
+
+    useEffect(()=> {
+        API.getOneQuiz(quizId).then(data=>{
+            console.log("retrieved data about this quiz")
+            console.log(data)
+            setQuizTitle(data.title);
+            setCreator(data.user.username);
+            setLikeNum(data.like)
+            setQuestions(data.questions);
+
+        })
+    },[])
 
 
-    useEffect(() => {
+    useEffect(()=>{
         if ( correctMsg !== '') {
-        const timer = setTimeout(() => {
-            const nextQuestion = currentQuestion + 1;
-            if (nextQuestion < questions.length) {
-                setCurrentQuestion(nextQuestion);
-            } else {
-                setShowScore(true);
-            }
-            setCorrectMsg('')
-            setTimeoutPeriod(false);
-          }, 1000);
-          return () => clearTimeout(timer);
+            const timer = setTimeout(() => {
+                const nextQuestion = curQIdx + 1;
+                if (nextQuestion < questions.length) {
+                    setCurQIdx(nextQuestion);
+                } else {
+                    setShowScore(true);
+                }
+                setCorrectMsg('')
+                setTimeoutPeriod(false);
+              }, 1000);
+              return () => clearTimeout(timer);
         } else return;
     },[correctMsg]);
 
     const handleAnswerButtonClick = (event, index) => {
         const {target} = event;
 
-        if ( !timeoutPeriod ) {
-            const currentQesObj = questions[currentQuestion];
-            const isCorrect = (index===currentQesObj.correctIndex)?true:false
+        if (!timeoutPeriod){
+            const currentQesObj = questions[curQIdx];
+            console.log(currentQesObj);
+            const isCorrect = (index==currentQesObj.correct_ans)?true:false;
 
             if (isCorrect) {
                 setScore(score + 1);
                 setCorrectMsg('Correct!!!')
                 target.className = 'right';
-            } else{
-                setCorrectMsg('Wrong! Correct answer: '+currentQesObj.answerOptions[currentQesObj.correctIndex]);
+            }else {
+                let correctAnsTxt = '';
+                switch(currentQesObj.correct_ans) {
+                    case '0':
+                        correctAnsTxt = currentQesObj.option1; break; 
+                    case '1':
+                        correctAnsTxt = currentQesObj.option2; break; 
+                    case '2':
+                        correctAnsTxt = currentQesObj.option3; break; 
+                    case '3':
+                        correctAnsTxt = currentQesObj.option2; break; 
+                    default: break;
+                }
+                setCorrectMsg('Wrong! Correct answer: '+correctAnsTxt);
                 target.className = 'wrong';
             }
-
-            setTimeoutPeriod(true);
         } else {
             return;
         }
     };
 
+    const handleLikeBtn = (event) => {
+        console.log("like clicked");
+        const newItem = {
+            like: parseInt(likeNum)+1
+        }
+        API.addLike(newItem, quizId).then(updateData=>{
+            API.getOneQuiz(quizId).then(data=>{
+                setLikeNum(data.like);
+            })
+        })
+    }
+
   return (
     <div className="trivia-quiz">
         <div className="quiz-container">
             <section className='quiz-header'>
-                <h2>How well do you know BTS?</h2>
+                <h2>{quizTitle}</h2>
                 <div className="details">
                     <div className="user">
-                        <img src="./images/temp_profile.jpg" alt="profile"/> 
-                        <strong className="username">JennyUser</strong></div>
+                        <img src="/images/temp_profile.jpg" alt="profile"/> 
+                        <strong className="username">{creator}</strong></div>
+                        <span className='like'><img src="/images/like.png" />{likeNum}</span>
                 </div>
             </section>
             <main className='quiz-body'>
                 {showScore ? (
+                    <motion.div 
+                    variants={variants}
+                    animate='animate'
+                    initial='initial'
+                    exit='exit'
+                    alt='slides'
+                    key={curQIdx+1}
+                    >
                     <div className='score-section'>
                         <section className='score-image'>
                             {questions.map((question, index) => (
-                                <img src={question.imageUrl} alt='questionimg' key={index}/>
+                                <img src={question.picture} alt='questionimg' key={index}/>
                             ))}
                         </section>
                         <p className='score'>You scored {score}  out of {questions.length}</p>
                         <section className='score-etc'>
                             <button >Login / Sign in to sore your score</button>
-                            <button>Like!!</button>  
+                            <button onClick={e=>handleLikeBtn(e)}>Like!!</button>  
                             <button>Share this quiz</button>
                          </section>
                     </div>
+                    </motion.div>
                 ) : (
                 <>
+                <div className="question-count">
+                        <span>Question {curQIdx+1} / {questions.length} </span>
+                </div>
+
                 <motion.div 
                     variants={variants}
                     animate='animate'
                     initial='initial'
                     exit='exit'
                     alt='slides'
-                    key={currentQuestion}
+                    key={curQIdx}
                     >
-
-                <section className='question-section'>
-                    <div className='question-count'>
-                        <span>Question {currentQuestion+1}</span>/ {questions.length}
+                {questions.map((item, i)=>(
+                    <div className={i===curQIdx?'eachQ curQ':'eachQ'} key={i}>
+                        <section className='question-section'>
+                            <div className="question-img"><img src={item.picture} alt="quizimg"/></div>
+                            <div className='question-text'>{item.question_content}</div>
+                        </section>
+                        <section className='answer-section'>
+                            <button onClick={event => handleAnswerButtonClick(event, 0)}>
+                                {item.option1}
+                            </button>
+                            <button onClick={event => handleAnswerButtonClick(event, 1)}>
+                                {item.option2}
+                            </button>
+                            <button onClick={event => handleAnswerButtonClick(event, 2)}>
+                                {item.option3}
+                            </button>
+                            <button onClick={event => handleAnswerButtonClick(event, 3)}>
+                                {item.option4}
+                            </button> 
+                        </section>
+                        <section className='correct-section'>{correctMsg}</section>
                     </div>
-                    <div className="question-img"><img src={questions[currentQuestion].imageUrl} alt="quizimg"/></div>
-                    <div className='question-text'>{questions[currentQuestion].questionText}</div>
-                </section>
-                <section className='answer-section'>
-                    {questions[currentQuestion].answerOptions.map((answerOption, index) => (
-                        // <button onClick={() => handleAnswerButtonClick(index===questions[currentQuestion].correctIndex?true:false)} key={index}>{answerOption}</button>
-                        <button onClick={event => handleAnswerButtonClick(event, index)} key={index}>{answerOption}</button>
-                    ))}
-                </section>
-                <section className='correct-section'>{correctMsg}</section>
+                ))}
                 </motion.div>
                 </>
                 )}
