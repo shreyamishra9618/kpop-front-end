@@ -28,7 +28,7 @@
   display: block;
   pointer-events: none;
   display: flex;
-  flex-wrap: warp;
+  flex-wrap: wrap;
 }
 
 .card-content-container.open {
@@ -91,7 +91,7 @@
 .title { 
   font-size: 30px;
   text-transform: uppercase;
-  color: black;
+  color: deeppink;
 }
 
 .content-container { 
