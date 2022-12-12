@@ -17,10 +17,10 @@ We have created a Kpop trivia and blog site. This site is for fans of Kpop! If y
 Wikipedia was used to gather all of the info within our wiki page. Google Translate was used to gather the correct usage of the Korean names of each group and their members.
 
 ## Collaboration
-Mo Risk-
+Mo Risk- She was responsible for most of the CSS, and getting the quiz and blog pages up and ruinning. She made sure that users can get their questions and answers entered and saved for others to have fun. Mo made sure that users were able to connect a picture to their quiz and or blog.
 
-Michelle Beaudoin-
+Michelle Beaudoin- She was responsible for the wiki page, she made sure each card had a photo, and when clicked there was wiki information on each person or group that was on the specific card. She filled the data file with all of the info used. She also created our README so others may use this project.
 
-Silvia Zhao-
+Liyuan Silvia Zhao- She created home, and dashboard pages so they look pleasing to the eye. She has made sure that each of our pages is properly linked and works when clicked upon in the nav. She has created the login and sign up page so useres can create a login and begin to make quizes or leave a blog for other users.
 
-Shreya Mishra-
+Shreya Mishra- She has done a majority of the back end with making sure each route is being fetched properly, with the controllers and getting each page to render and talk with the front end. She has linked our front end to our back end to create our fully functional website.
