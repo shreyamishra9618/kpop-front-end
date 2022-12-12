@@ -7,7 +7,7 @@ import "../Item/style.css"
 export default function Item({ id }) {
   
 
-  const { title, GroupName, MemberNames, Picture, Country, KoreanGroupName,DateGroupFormed, FandomName,Instagram,Top3Songs } = items.find(item => item.id === id);
+  const { title, GroupName, MemberNames, Picture, Country, KoreanGroupName, DateGroupFormed, FandomName, Instagram, Top3Songs } = items.find(item => item.id === id);
   
   return (
     <>
