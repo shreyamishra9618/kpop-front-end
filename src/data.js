@@ -6,7 +6,7 @@ export const items = [
       username:"Silvia",
       title: "Blackpink Ladies",
       numberofLike: 80,
-      GroupName: "Black Pink has 4 members",
+      GroupName: "BlackPink has 4 members",
       MemberNames: "Their Korean names are: Rosé 로제  ,Lisa 리사 ,Jennie 제니 ,and Jisoo 지수",
       Country:"They are the first music group and Korean female act to have five music videos accumulate one billion views each on YouTube; Their other accolades include the New Artist of the Year Award at the 31st Golden Disc Awards and the 26th Seoul Music. They have been acknowledged as one of the most powerful celebrities in South Korea by Forbes Korea (placing first in 2019, third in 2020, and second in 2021) and by former South Korean President Moon Jae-in as a global K-pop phenomenon helping spread K-pop content worldwide. In 2022, Blackpink was named Time's Entertainer of the Year for their contributions to music.",
       Picture:"https://lastfm.freetls.fastly.net/i/u/770x0/d8fa3e34c1dc4fd4b87bb2372697d544.jpg#d8fa3e34c1dc4fd4b87bb2372697d544"
