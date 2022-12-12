@@ -30,6 +30,7 @@ export default function TriviaQuiz(props) {
     const [timeoutPeriod, setTimeoutPeriod] = useState(false);
 
     const [quizTitle , setQuizTitle] = useState('');
+    const [creatorPic , setCreatorPic] = useState('');
     const [creator , setCreator] = useState('');
     const [likeNum , setLikeNum] = useState(0);
     const [questions, setQuestions] = useState([]);
@@ -40,6 +41,7 @@ export default function TriviaQuiz(props) {
             console.log(data)
             setQuizTitle(data.title);
             setCreator(data.user.username);
+            setCreatorPic(data.user.picture);
             setLikeNum(data.like)
             setQuestions(data.questions);
 
@@ -91,6 +93,9 @@ export default function TriviaQuiz(props) {
                 setCorrectMsg('Wrong! Correct answer: '+correctAnsTxt);
                 target.className = 'wrong';
             }
+
+            setTimeoutPeriod(true);
+
         } else {
             return;
         }
@@ -115,7 +120,7 @@ export default function TriviaQuiz(props) {
                 <h2>{quizTitle}</h2>
                 <div className="details">
                     <div className="user">
-                        <img src="/images/temp_profile.jpg" alt="profile"/> 
+                        <img src={creatorPic?creatorPic:"/images/temp_profile.jpg"} alt="profile"/> 
                         <strong className="username">{creator}</strong></div>
                         <span className='like'><img src="/images/like.png" />{likeNum}</span>
                 </div>

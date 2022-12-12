@@ -38,8 +38,7 @@
 .createpost .quiz-nav span{font-size:0.85em;color:#333;padding-top:3px;}
 .createpost .quiz-nav button.inactive{color:#ccc;}
 .createpost .image-uploader input{background-color:#fff;}
-.createpost .image-uploader button{border-radius: 4px;padding:4px 10px;background-color: rgb(226, 141, 194);}
 .createpost .inputline.corrA select{padding:2px 10px;}
 
 .blog-input-box{background-color:rgb(227, 225, 225);border-radius: 10px;padding:15px;}
-.quizCreated{color:red;margin:5px 0;font-weight:bold;}
+.quizCreated{color:red;margin:5px 0;font-weight:bold;border:2px dashed red;padding:15px;background-color:rgb(249, 212, 218);margin-bottom:10px;}
