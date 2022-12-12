@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 import QuestionSet from '../../components/QuestionSet';
 import "./style.css"
 import API from '../../utils/API';
@@ -25,6 +26,7 @@ export default function CreatePost(props) {
     const [errMsg, setErrMsg] = useState('')
 
     const [quizId, setQuizId] = useState('');
+    const [quizRoute, setQuizRoute] = useState('');
 
     const handleQuizFormSubmit = e => {
         e.preventDefault();
@@ -61,6 +63,7 @@ export default function CreatePost(props) {
         .then(data=>{
             console.log(data);
             setQuizId(data.quiz_id);
+            setQuizRoute('/triviaquiz/'+data.quiz_id);
 
             let newQuestionItem = {}
             questionSetArray.forEach((qSet)=>{
@@ -84,18 +87,18 @@ export default function CreatePost(props) {
         
         //reset
         setErrMsg('');       
-        // setKeyword('');
-        // setTriviaTitle('');
-        // setQuestionSetArray([
-        //     { 
-        //         questionText: '', 
-        //         imageUrl:'',
-        //         correctIndex : '',
-        //         answerOptions: [],
-        //     }
-        // ])
-        // setImageCloudinaryData('');
-        // setCurrentQIdx(0);
+        setKeyword('');
+        setTriviaTitle('');
+        setQuestionSetArray([
+            { 
+                questionText: '', 
+                imageUrl:'',
+                correctIndex : '',
+                answerOptions: [],
+            }
+        ])
+        setImageCloudinaryData('');
+        setCurrentQIdx(0);
 
 
     }   
@@ -178,7 +181,7 @@ export default function CreatePost(props) {
             
             {quizId&& (
             <div className="quizCreated">
-                Your quiz has been created : id {quizId}
+                Your quiz has been created : <Link to={quizRoute}>Here</Link>
             </div>
             )}
 

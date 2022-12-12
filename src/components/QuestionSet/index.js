@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import ImageUploader from '../ImageUploader';
-import { Image } from "cloudinary-react";
 
 export default function QuestionSet({   
         currentQIdx, 
