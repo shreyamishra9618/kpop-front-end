@@ -7,9 +7,6 @@ We have created a Kpop trivia and blog site. This site is for fans of Kpop! If y
 ## Use
 
 
-## Deployment
-
-
 ## Mock up
 
 
