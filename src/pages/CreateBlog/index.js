@@ -38,7 +38,8 @@ export default function CreateBlog(props) {
             title: keyword,
             description: blogText,
             picture: `https://res.cloudinary.com/digyae86x/image/upload/v1670654642/${imageCloudinaryData.public_id}`,
-            username: props.userName
+            username: props.userName,
+            user_id: props.userId
         }
         
         console.log(newBlogItem);
