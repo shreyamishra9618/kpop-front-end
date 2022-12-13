@@ -9,6 +9,7 @@ import CreatePost from "./pages/CreatePost";
 import CreateBlog from "./pages/CreateBlog";
 import Wikipage from "./pages/WikiPage";
 import Dashboard from "./pages/Dashboard";
+import Mypage from "./pages/Mypage";
 import API from "./utils/API";
 
 
@@ -16,6 +17,7 @@ function App() {
   const [userId, setUserId] = useState(0)
   const [userName, setUserName] = useState("")
   const [userEmail, setUserEmail] = useState("")
+  const [userPicture, setUserPicture] = useState("image/profile_temp.png")
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [token, setToken] = useState("")
 
@@ -34,6 +36,7 @@ function App() {
           setUserId(data.user.id)
           setUserName(data.user.username)
           setUserEmail(data.user.email)
+          !data.user.picture&&setUserEmail(data.user.picture);
         }
       })
     } else {
@@ -75,12 +78,21 @@ function App() {
   return (
     <div className="container">
       <Router>
-        <Header isLoggedIn={isLoggedIn} handleLogout={handleLogout} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
+        <Header 
+            isLoggedIn={isLoggedIn} 
+            handleLogout={handleLogout} 
+            userPicture={userPicture}
+            currentPage={currentPage} 
+            setCurrentPage={setCurrentPage}/>
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/wiki" element={<Wikipage />} />
           <Route path="/wiki/:id" element={<Wikipage />} />
+          <Route path="/blog" element={<Dashboard />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/mypage" element={<Mypage 
+            userId={userId}
+          />} />
           <Route path="/login" element={<Login
             isLoggedIn={isLoggedIn}
             handleLoginSubmit={handleLoginSubmit}

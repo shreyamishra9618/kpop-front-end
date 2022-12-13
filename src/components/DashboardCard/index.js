@@ -4,7 +4,7 @@ import "./style.css"
 export default function DashboardCard(info) {
     // const { id, description, picture} = info;
     return (
-        <div className='blog-container'>
+        <li className='blog-container'>
         
                    
                     <div className="blog-card-info">
@@ -21,7 +21,7 @@ export default function DashboardCard(info) {
                         {/* <button>Delete</button>
                         <button>Edit</button> */}
                      </div>
-        </div>
+        </li>
 
     );
 }

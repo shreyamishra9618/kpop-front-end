@@ -1,21 +1,18 @@
 .homepage{
-    display: flex;
-    flex-wrap: wrap;
+text-align:center;
 }
 
-.mainpage{
-    width:88%;
-    padding: 1%;
-
+.homepage_container{
+width:90%;margin:0 auto;
 }
 
 .quiz-card{
-    width:100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    align-items: center;
+
 }
+.quiz-card li{width:30%;}
 
 
 .userRanking{

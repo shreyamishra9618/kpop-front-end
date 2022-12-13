@@ -13,14 +13,23 @@ export default function Header(props) {
 
   return (
     <div className="header">
-      <h1>K-pop Trivia Fever</h1>
+      <h1 ><img src="/images/kpop_header.png" alt="kpop trivia fever" /></h1>
       {/* <Link to ="/">Homepage</Link> */}
-        {props.isLoggedIn?<Link to ="/dashboard">User Account</Link>:null}
-        {props.isLoggedIn?<button onClick={logoutFunc}>Logout</button>:<Link to="/login">login</Link>}
+
       <div className="navbar">
+        <div className="userinfo">
+          <ul>
+            <li className={currentPage === 'Mypage' ? 'nav-item active' : 'nav-item'}>{props.isLoggedIn?<Link to ="/mypage" onClick={() => setCurrentPage('Mypage')} >My Page</Link>:null}</li>
+            <li>{props.isLoggedIn?<button onClick={logoutFunc}>Logout</button>:<Link to="/login"><button>Login</button></Link>}</li>
+          </ul>
+        
+        
+        </div>
 				<Navbar
 					currentPage={props.currentPage}
 					setCurrentPage={props.setCurrentPage}
+          isLoggedIn = {props.isLoggedIn}
+          logoutFunc = {logoutFunc}
 				></Navbar>
     
 			</div>
