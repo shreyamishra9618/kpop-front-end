@@ -1,7 +1,7 @@
-// in dev mode
-const URL_PREFIX= "http://localhost:3001"
+// // in dev mode
+// const URL_PREFIX= "http://localhost:3001"
 // in prod mode
-// const URL_PREFIX= "https://something.herokuapp.com"
+const URL_PREFIX= "https://kpop-backendprojectsm.herokuapp.com"
 
 const  API = {
     login: (userObj)=>{
