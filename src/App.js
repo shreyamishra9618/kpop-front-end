@@ -90,8 +90,7 @@ function App() {
           <Route path="/wiki/:id" element={<Wikipage />} />
           <Route path="/blog" element={<Dashboard />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/mypage" element={<Mypage 
-            userId={userId}
+          <Route path="/mypage" element={<Mypage  
           />} />
           <Route path="/login" element={<Login
             isLoggedIn={isLoggedIn}
