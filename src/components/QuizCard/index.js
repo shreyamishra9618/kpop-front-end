@@ -6,11 +6,11 @@ import "../QuizCard/style.css"
 export default function QuizCard(info1) {
     console.log(info1.picture)
     console.log(info1.username)
-
+    const quizURL = `/triviaquiz/${info1.quiz_id}`;
     return (
-        <div className='quiz-container'>
+        <li className='quiz-container'>
 
-            <Link to="/triviaquiz/1">
+            <Link to={quizURL}>
                 <div>
 
                     <div className="quiz-card-info">
@@ -22,6 +22,6 @@ export default function QuizCard(info1) {
                     </div>
                 </div>
             </Link>
-        </div>
+        </li>
     );
 }

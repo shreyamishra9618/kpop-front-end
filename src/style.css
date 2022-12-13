@@ -62,7 +62,9 @@
   }
   
   .container {
-    flex: 1 1 100%;
+    width:90%;
+
+    max-width: 1260px;
   }
   
   h1 {
