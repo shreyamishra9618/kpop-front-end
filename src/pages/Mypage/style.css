@@ -1,0 +1,11 @@
+.mypage .mypage_container{
+    width:90%;
+    margin:0 auto;
+    text-align: left;
+    background-color: pink;
+    border-radius: 15px;
+    padding:25px 30px;
+}
+.mypage{text-align: center;}
+.mypage h2{color:#000;margin:0 0 20px;}
+.mypage .logininfobox img{width:150px;height:150px;border-radius: 200px;}

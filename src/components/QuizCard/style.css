@@ -1,0 +1,24 @@
+
+
+
+
+.quiz-container{
+    width:30%;
+    background-color:lightpink;
+    margin:3px;
+    border-radius: 10px;
+}
+
+.quiz-container img{
+    width:70%;
+   
+}
+
+
+a{
+    text-decoration: none;
+}
+
+.quiz-container .h2 .h3 .h4{
+    color: aliceblue;
+}

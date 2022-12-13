@@ -1,0 +1,29 @@
+.dashboard{
+    text-align:center;
+}
+
+.dashboard .mainpage{
+    width:95%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin:0 auto;
+
+}
+
+.dash-options{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+}
+
+button{
+    margin:10px;
+}
+.blog-card{
+    width:100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}

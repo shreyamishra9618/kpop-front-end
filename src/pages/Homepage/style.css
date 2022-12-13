@@ -1,0 +1,27 @@
+.homepage{
+text-align:center;
+}
+
+.homepage_container{
+width:90%;margin:0 auto;
+}
+
+.quiz-card{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+.quiz-card li{width:30%;}
+
+
+.userRanking{
+    width:10%;
+    background-color:aliceblue;
+    display: flex;
+    flex-direction: column;
+}
+
+h3{
+    color: black;
+}
