@@ -99,6 +99,7 @@ function App() {
           />} />
           <Route path="/triviaquiz" element={<TriviaQuiz />} />
           <Route path="/triviaquiz/:quizId" element={<TriviaQuiz 
+            isLoggedIn={isLoggedIn}
             token={token}
           />} />
           <Route path="/createpost" element={<CreatePost 

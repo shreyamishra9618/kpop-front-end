@@ -1,5 +1,5 @@
 import React from 'react'
-import '../WikiPage/style.css';
+// import '../WikiPage/style.css';
 import { AnimatePresence } from "framer-motion";
 
 import  List  from "../../components/List";
