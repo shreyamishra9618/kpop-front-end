@@ -1,7 +1,7 @@
 ## K-pop-front-end
 # Project Description
 Fandom life made easier and more dynamic. Stay connected with your artists on K-pop Trivia Fever! Here you can play quizes, read blogs and create quizes or blog related to your favorite K-pop group or idol.
-We have created a Reatc based web application. This is a interactive site for K-pop fans! If you love this music genre like we do, then you will get a kick out of this site. (This is the front end side. At the bottom of this readme in the Mock up section is the link for acquiring the back end side.)
+We have created a React based web application. This is an interactive site for K-pop fans! If you love this music genre like we do, then you will get a kick out of this site. (This is the front end side. At the bottom of this readme in the Mock up section is the link for acquiring the back end side.)
 
 ## Install
 #### `npm install` 
@@ -16,14 +16,21 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-
-
-
-## Deployment
-
-
 ## Mock up
+deployed - https://kpop-trivia-fever.netlify.app/
 
+github back-end- https://github.com/shreyamishra9618/kpop-back-end.git
+
+![screenshot](homePage.png)
+![screenshot](blogPage.png)
+![screenshot](kpopWiki.png)
+![screenshot](loginSignup.png)
+![screenshot](createQuiz.png)
+![screenshot](createBlog.png)
+
+
+## Resources
+Wikipedia was used to gather all of the info within our wiki page. Google Translate was used to gather the correct usage of the Korean names of each group and their members.
 
 ## Collaboration
 
