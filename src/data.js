@@ -34,7 +34,8 @@ export const items = [
       Country:"She can speak Thai, English, and Korean.",
       DateGroupFormed:"Lisa made her solo debut with her single album Lalisa in September 2021. The album sold over 736,000 copies in its release week in South Korea, making her the first female artist to do so. The music video for its lead single of the same name recorded 73.6 million views on YouTube in first 24 hours of its release, becoming the most-viewed music video in the first 24 hours on the platform by a solo artist. The song earned Lisa two Guinness World Records as well as the first MTV Video Music Award ever won by a K-pop soloist.",
       FandomName:"Lisa is a brand ambassador for Moonshot cosmetics.",
-      Picture:"https://www.nme.com/wp-content/uploads/2021/09/lisa-blackpink-money-video-yg-entertainment-200921.jpg"
+      // Picture:"https://www.nme.com/wp-content/uploads/2021/09/lisa-blackpink-money-video-yg-entertainment-200921.jpg"
+      Picture: "images/lisa.jpg"
     },
     {
       id: "d",

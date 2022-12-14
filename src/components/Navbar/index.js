@@ -6,7 +6,7 @@ function Navbar({currentPage, setCurrentPage, isLoggedIn, logoutFunc}) {
 
   return (
     <nav className="navbarPage">
-      <ul>
+      <ul className='nablinks'>
         <li className={currentPage === 'Home' ? 'nav-item active' : 'nav-item'} >
           <Link to="/"  onClick={() => setCurrentPage('Home')}>Home</Link>
         </li>
@@ -16,15 +16,16 @@ function Navbar({currentPage, setCurrentPage, isLoggedIn, logoutFunc}) {
         <li className={currentPage === 'Wiki' ? 'nav-item active' : 'nav-item'} >
           <Link to="/wiki"  onClick={() => setCurrentPage('Wiki')}> Kpop Wiki</Link>
         </li>
+      </ul>
         {isLoggedIn&&(
-          <>
-            <li className={currentPage === 'createpost' ? 'nav-item active' : 'nav-item'}>
+          <ul className='nablinks_create'>
+            <li className={currentPage === 'createpost' ? 'nav-item active createlink' : 'nav-item createlink'}>
             <Link to="/createpost" onClick={() => setCurrentPage('createpost')}>Create a quiz</Link>
             </li>
-            <li className={currentPage === 'createblog' ? 'nav-item active' : 'nav-item'}>
+            <li className={currentPage === 'createblog' ? 'nav-item active  createlink' : 'nav-item createlink'}>
             <Link to="/createblog" onClick={() => setCurrentPage('createblog')}>Create a blog</Link>
             </li>
-          </>
+          </ul>
         )}
         
         {/* <li  className={currentPage === 'Triviaquiz' ? 'nav-item active' : 'nav-item'} >
@@ -32,7 +33,7 @@ function Navbar({currentPage, setCurrentPage, isLoggedIn, logoutFunc}) {
         </li> */}
 
         
-        </ul>
+       
         {/* <div>
           <form>
             <input id="searchInput" type="text" placeholder="search kpop group"/>

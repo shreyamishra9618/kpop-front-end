@@ -12,15 +12,18 @@
     text-align: left;
 }
 .createpost label{font-weight:bold;margin-right:10px;font-size:1em;}
-.createpost .inputline{display:flex;padding-bottom:10px;align-items: center;}
-.createpost .txtInput{border:1px solid rgb(41, 41, 191);border-radius: 5px;padding:5px 10px}
+.createpost .inputline{display:flex;padding-bottom:12px;align-items: center;}
+.createpost .txtInput{border:1px solid rgb(41, 41, 191);border-radius: 5px;padding:7px 10px}
 .createpost .inputline.title{font-size:1em;}
 .createpost .inputline.title .txtInput{width:70%;}
 .createpost .typeBtn{border:2px solid #000;background:#ccc;padding:5px 10px;border-radius:5px;margin-right:5px;cursor:pointer;}
 .createpost .typeBtn.on{background:blue;color:white}
 .createpost .errmrg{padding:3px 0;font-size:0.9em;color:red;line-height: 120%;margin:0;}
+
 .createpost .inputline.qQ .txtInput{width:80%;}
-.createpost .inputline.qA .txtInput{width:40%;margin-right:5px;}
+.createpost .inputline.qA{padding-bottom:0;}
+.createpost .inputline.qA .a{display:flex;padding-right:5px;width:50%;align-items: center;margin-bottom:10px;}
+.createpost .inputline.qA .txtInput{flex-grow:1;margin-right:5px;}
 .createpost .inputline.qA label{margin-right:3px;font-size:0.9em;}
 .createpost .qInputSet{background-color:rgb(227, 225, 225);border-radius: 10px;padding:15px;position:relative;margin-bottom:5px;}
 .createpost .qInputSet h4{margin-bottom:7px;font-weight:bold;color:blue;margin-top:0;}
@@ -42,3 +45,31 @@
 
 .blog-input-box{background-color:rgb(227, 225, 225);border-radius: 10px;padding:15px;}
 .quizCreated{color:red;margin:5px 0;font-weight:bold;border:2px dashed red;padding:15px;background-color:rgb(249, 212, 218);margin-bottom:10px;}
+
+.createpost .inputline.qblog{display: flex;flex-direction: column;align-items: flex-start;}
+.createpost .inputline.qblog textarea{width:80%;height:25vh;margin-top:8px;}
+
+
+
+/* Tablets - header changes color */
+@media screen and (max-width: 992px) {
+
+}
+  
+/* Large smartphones */
+@media screen and (max-width: 768px) {
+    .createpost .inputline.qA{flex-direction: column;}
+    .createpost .inputline.qA .a{width:100%;}
+    .createpost .inputline.qblog textarea{width:100%;}
+}
+
+/* Small smartphones  */
+@media screen and (max-width: 576px) {
+    .createpost .create-container{padding:10px;}
+    .createpost .inputline span{display:none;}
+    .createpost .inputline.title{display:flex;flex-direction:column;align-items: flex-start;}
+    .createpost .inputline.title .txtInput{width:100%;}
+    .createpost .qImg img{width:50%;}
+    .createpost .inputline.qQ .txtInput{flex-grow: 1;}
+}
+  

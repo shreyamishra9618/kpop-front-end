@@ -31,7 +31,6 @@ export default function Homepage(props) {
             user_id={item.user_id}
             picture={item.questions[0].picture}
             username={item.user.username}
-       
             />)}
 
         </ul>

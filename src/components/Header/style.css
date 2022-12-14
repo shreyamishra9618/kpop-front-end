@@ -1,11 +1,46 @@
 .header{display:flex;justify-content: space-between;}
 .header h1{width:55%;margin:0;}
 .header h1 img{width:100%;display:block;}
-.header .navbar{width:40%;display:flex;flex-direction: column;align-items: flex-end;justify-content: center;}
-.header .navbar a{color:#ff33ff}
+.header .navbar{width:45%;display:flex;flex-direction: column;align-items: flex-end;justify-content: center;}
+.header .navbar a{color:#ff33ff;text-decoration: none;}
 .header .userinfo{margin-bottom:10px;}
 .header .userinfo button{margin:0;margin-left:15px;}
 
-.header .nav-item{margin-left:15px;}
+.header .nav-item{margin-left:10px;padding:3px 5px;}
 .header .navbar ul{display:flex;}
-.header .nav-item.active{font-weight:bold;text-decoration: underline;}
+.header .nav-item.active{font-weight:bold;position:relative;}
+.header .nav-item.active::after{content:"";
+    position:absolute;
+    height:3px;
+    width:100%;
+    background: lightpink;
+    bottom:-5px;
+    left:0;
+    transform-origin:left;
+    }
+.header .navbarPage{display:flex;}
+
+/* Tablets - header changes color */
+@media screen and (max-width: 992px) {
+    .header{flex-direction: column;margin-bottom:12px}
+    .header h1 {width:85%;}
+    .header .navbar {width:100%;margin-top:-30px;z-index: 10;}
+
+    .header .navbarPage .nablinks{margin-bottom:5px;}
+}
+  
+/* Large smartphones */
+@media screen and (max-width: 768px) {
+
+}
+
+/* Small smartphones  */
+@media screen and (max-width: 576px) {
+.header h1 {width:90%;}
+.header .navbar {width:100%;margin-top:-10px;z-index: 10;}
+.header .navbar ul{flex-wrap: wrap;justify-content: flex-end;}
+.header .navbarPage{flex-direction: column;}
+.header .nav-item{margin-left:0px;padding:0 6px;text-align:center;}
+
+}
+  
