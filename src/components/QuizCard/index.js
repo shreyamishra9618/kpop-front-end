@@ -8,20 +8,20 @@ export default function QuizCard(info1) {
     console.log(info1.username)
     const quizURL = `/triviaquiz/${info1.quiz_id}`;
     return (
-        <li className='quiz-container'>
+    <li className='quiz-container'>
+        <Link to={quizURL}>
 
-            <Link to={quizURL}>
-                <div>
+        <img src={info1.picture} alt="quiz image" className='quizimage'/>
+        <section className="detail">
+            <h2 className="cardtitle">{info1.title}</h2>
+            <p>
+            <span className='likes'><img src="/images/like.png" /><strong> {info1.like} </strong></span>
+            <span className='created'>Created by: <strong>{info1.username}</strong></span>
+            </p>
+        </section>
+        {/* <h4>User Id no: {info1.user_id} </h4> */}
 
-                    <div className="quiz-card-info">
-                        <h2 >{info1.title}</h2>
-                        <img src={info1.picture} alt="quiz image" />
-                        <h4>{info1.like} Likes</h4>
-                        <h4>Created BY:{info1.username}</h4>
-                        <h4>User Id no: {info1.user_id} </h4>
-                    </div>
-                </div>
-            </Link>
-        </li>
+        </Link>
+    </li>
     );
 }
