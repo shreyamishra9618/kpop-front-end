@@ -29,3 +29,32 @@
 .loginPage .profilepic{display:flex;}
 .loginPage .profilepic input{background-color:rgb(233, 231, 231);}
 .loginPage .image-uploader img{width:100px;height:100px;object-fit: cover;object-position: center;border-radius: 150px;}
+
+.loginPage input{border:1px solid rgb(41, 41, 191);border-radius: 5px;padding:7px 10px;margin-bottom:5px;}
+.loginPage .bluebtn{margin:0;padding:8px 30px;background-color: blue;border-radius: 10px;color:#fff;margin-top:10px;}
+
+/* Tablets - header changes color */
+@media screen and (max-width: 992px) {
+
+}
+  
+/* Large smartphones */
+@media screen and (max-width: 768px) {
+    .loginPage{
+
+        padding:0px;
+    }
+    .loginpageContainer{width:100%;padding:30px;}
+    .loginPage form{
+        padding:12px 20px;
+    }
+    .loginPage .profilepic{flex-direction: column;}
+    .loginPage .imgup input{border: none;}
+}
+
+/* Small smartphones  */
+@media screen and (max-width: 576px) {
+
+
+}
+  

@@ -78,7 +78,7 @@ export default function CreateBlog(props) {
                             handleImgResponse={handleImgResponse}/>
 
                     </section>
-                    <section className='inputline'>
+                    <section className='inputline qblog'>
                         <label>Blog Content</label>
                         <textarea name="blogtext" value={blogText}  className="txtInput" onChange={e=>setBlogText(e.target.value)} ></textarea> 
                     </section>

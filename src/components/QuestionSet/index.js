@@ -46,16 +46,24 @@ export default function QuestionSet({
             <input type="text" className="txtInput" name="questionText" value={item.questionText || ""} onChange={e => handleQuestionSetChange(e)}/>
         </section>
         <section className='inputline qA'>
+            <div class="a">
             <label>Choice 1:</label>
             <input type="text" className="txtInput" name="a1" value={item.answerOptions[0] || ""} onChange={e => handleQuestionSetChange(e)}/>
+            </div>
+            <div class="a">
             <label>Choice 2:</label>
             <input type="text" className="txtInput" name="a2" value={item.answerOptions[1] || ""} onChange={e => handleQuestionSetChange(e)}/>
+            </div>
         </section>
         <section className='inputline qA'>
+         <div class="a">
             <label>Choice 3:</label>
             <input type="text" className="txtInput" name="a3" value={item.answerOptions[2] || ""} onChange={e => handleQuestionSetChange(e)}/>
+            </div> 
+            <div class="a">
             <label>Choice 4:</label>
             <input type="text" className="txtInput" name="a4" value={item.answerOptions[3] || ""} onChange={e => handleQuestionSetChange(e)}/>
+            </div>
         </section>
         <section className='inputline corrA'>
             <label>Correct Answer:</label>

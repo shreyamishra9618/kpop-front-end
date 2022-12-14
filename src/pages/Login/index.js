@@ -49,7 +49,7 @@ export default function Login(props) {
         <input name="email"  value={loginEmail} onChange={e=>setLoginEmail(e.target.value)}/> <br />
         <label htmlFor="password">Password:</label>
         <input type="password" name="password" value={loginPassword} onChange={e=>setLoginPassword(e.target.value)}/> <br />
-        <button>Log in!</button>
+        <button className='bluebtn'>Log in!</button>
       </form>
       <form onSubmit={signupHandle}  className="signup">
         <h3><span>Signup</span></h3>
@@ -61,11 +61,13 @@ export default function Login(props) {
         <input type="password" name="password" value={signupPassword} onChange={e=>setSignupPassword(e.target.value)}/> <br />
         <div className='profilepic'>
         <label>Profile Picture:</label>
+        <div className='imgup'>
         <ImageUploader 
                 imageCloudinaryData={imageCloudinaryData} 
                 handleImgResponse={handleImgResponse}/> 
         </div>
-        <button>Signup!</button>
+        </div>
+        <button className='bluebtn'>Signup!</button>
       </form>
     </div>
     </div>
