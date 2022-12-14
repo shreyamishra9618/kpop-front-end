@@ -143,6 +143,7 @@ export default function TriviaQuiz(props) {
                             ))}
                         </section>
                         <p className='score'>You scored {score}  out of {questions.length}</p>
+                        {/* link changed */}
                         <section className='score-etc'>
                             {!props.isLoggedIn&&<Link to="/login"><button >Login to create your won!</button></Link>}
                             <button onClick={e=>handleLikeBtn(e)}><img src="/images/like.png" /> Like!!</button>  
