@@ -38,9 +38,11 @@
 .trivia-quiz .score-image{display:flex;justify-content: center;flex-wrap: wrap;}
 .trivia-quiz .score-image img{width:25%;height:200px;object-fit: cover;}
 .trivia-quiz .score-section{background-color:#ccc;padding:20px;border-radius: 10px;}
-.trivia-quiz .score{padding:20px 0;font-size: 1.5em;line-height:100%;}
+.trivia-quiz .score{padding:20px 0;font-size: 1.5em;line-height:100%;margin:0;}
 .trivia-quiz .eachQ{display:none}
 .trivia-quiz .eachQ.curQ{display:block;}
+.trivia-quiz .score-etc button{height:30px;padding:0 10px;}
+.trivia-quiz .score-etc button img{width:20px;vertical-align:middle;}
 
 /* Tablets - header changes color */
 @media screen and (max-width: 992px) {

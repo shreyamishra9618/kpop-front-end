@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import { motion } from "framer-motion";
 import API from '../../utils/API';
 import "./style.css"
+
 
 const variants = {
     initial: {
@@ -142,10 +143,10 @@ export default function TriviaQuiz(props) {
                             ))}
                         </section>
                         <p className='score'>You scored {score}  out of {questions.length}</p>
+                        {/* link changed */}
                         <section className='score-etc'>
-                            <button >Login / Sign in to sore your score</button>
-                            <button onClick={e=>handleLikeBtn(e)}>Like!!</button>  
-                            <button>Share this quiz</button>
+                            {!props.isLoggedIn&&<Link to="/login"><button >Login to create your won!</button></Link>}
+                            <button onClick={e=>handleLikeBtn(e)}><img src="/images/like.png" /> Like!!</button>  
                          </section>
                     </div>
                     </motion.div>
