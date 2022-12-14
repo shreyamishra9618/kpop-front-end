@@ -1,14 +1,13 @@
 .dashboard{
-    display: flex;
-    flex-wrap: wrap;
+    text-align:center;
 }
 
-.mainpage{
+.dashboard .mainpage{
     width:95%;
-    padding: 1%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+    margin:0 auto;
 
 }
 

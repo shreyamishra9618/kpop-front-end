@@ -6,23 +6,24 @@ import API from '../../utils/API';
 
 // Silvia -need to fetch data (instead of use items)
 export default function Homepage(props) {
-  const [quiz, setQuiz] = useState([
-     
-  ])
+  const [quiz, setQuiz] = useState([])
+  const [quizQ, setQuizQ] = useState([])
+  
   useEffect(()=>{
     API.getAllQuiz().then(data1=>{
-        console.log(data1)
-        setQuiz(data1)
-        // console.log(data1.questions[0].picture)
+        console.log("got all quiz!!!")
+        console.log(data1);
+        setQuiz(data1);
+        // setQuizQ(data1.map((item)=>({ ...item, q1: item.questions[0] }) ));
     })
-},[props.userId])
+  },[props.userId])
 
   return (
     <div className='homepage'>
-    <div className='mainpage'>
-        <li className='quiz-card'>
-        <ul>
-            {quiz.map((item)=><QuizCard 
+      <div className="homepage_container">
+        <ul className='quiz-card'>
+        
+        {quiz.map((item)=><QuizCard 
             key={item.quiz_id} 
             quiz_id={item.quiz_id} 
             title={item.title} 
@@ -32,12 +33,13 @@ export default function Homepage(props) {
             username={item.user.username}
        
             />)}
+
         </ul>
-        </li>
         </div>
-      <div className='userRanking'>
-        <h4>Top Score Users</h4>
-      </div>
+{/* 
+      // <div className='userRanking'>
+      //   <h4>Top Score Users</h4>
+      // </div> */}
       </div>
   );
 }

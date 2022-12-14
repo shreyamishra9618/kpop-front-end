@@ -1,10 +1,22 @@
-# kpop-front-end
-We have created a Kpop trivia and blog site. This site is for fans of Kpop! If you love this music genre like we do, then you will get a kick out of this site. (This is the front end side. At the bottom of this readme in the Mock up section is the link for acquiring the back end side.)
+## K-pop-front-end
+# Project Description
+Fandom life made easier and more dynamic. Stay connected with your artists on K-pop Trivia Fever! Here you can play quizes, read blogs and create quizes or blog related to your favorite K-pop group or idol.
+We have created a Reatc based web application. This is a interactive site for K-pop fans! If you love this music genre like we do, then you will get a kick out of this site. (This is the front end side. At the bottom of this readme in the Mock up section is the link for acquiring the back end side.)
 
-## install
+## Install
+#### `npm install` 
+#### `npm i react-router-dom` 
+#### `npm start`
 
 
 ## Use
+Select the links in the header navigation bar to move to to different pages.
+To run the app in the development mode:-
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
+
+
 
 
 ## Mock up
@@ -14,10 +26,5 @@ We have created a Kpop trivia and blog site. This site is for fans of Kpop! If y
 Wikipedia was used to gather all of the info within our wiki page. Google Translate was used to gather the correct usage of the Korean names of each group and their members.
 
 ## Collaboration
-Mo Risk- She was responsible for most of the CSS, and getting the quiz and blog pages up and ruinning. She made sure that users can get their questions and answers entered and saved for others to have fun. Mo made sure that users were able to connect a picture to their quiz and or blog.
 
-Michelle Beaudoin- She was responsible for the wiki page, she made sure each card had a photo, and when clicked there was wiki information on each person or group that was on the specific card. She filled the data file with all of the info used. She also created our README so others may use this project.
-
-Liyuan Silvia Zhao- She created home, and dashboard pages so they look pleasing to the eye. She has made sure that each of our pages is properly linked and works when clicked upon in the nav. She has created the login and sign up page so useres can create a login and begin to make quizes or leave a blog for other users.
-
-Shreya Mishra- She has done a majority of the back end with making sure each route is being fetched properly, with the controllers and getting each page to render and talk with the front end. She has linked our front end to our back end to create our fully functional website.
+ Mo Risk, Michelle, Shreya Mishra and Liyuan Zhao contributed equally and created the entirety of this webpage. You can find other projects by Mo Risk, Michelle, Shreya, and Liyuan at each of their github pages: [Mo Risk](https://github.com/morisky78),[Michelle](https://github.com/mfarrell23), [Shreya](https://github.com/shreyamishra9618), [Liyuan](https://github.com/LiyuanSilviaZhao).

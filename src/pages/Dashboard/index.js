@@ -21,14 +21,13 @@ export default function Dashboard(props) {
   return (
     <div className='dashboard'>
       <div className='mainpage'>
-        <div className='dash-options'>
+        {/* <div className='dash-options'>
           <button>My quizes</button>
           <button>My blogs</button>
-        </div>
+        </div> */}
 
-        <li className='blog-card'>
+        <ul className='blog-card'>
 
-          <ul>
             {tasks.map((item) => <DashboardCard
               key={item.id}
               id={item.id}
@@ -39,8 +38,8 @@ export default function Dashboard(props) {
 
 
             />)}
-          </ul>
-        </li>
+        </ul>
+
       </div>
     </div>
   )
